@@ -29,26 +29,26 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/liceo/index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
-          <li class="nav-item"><a class="nav-link" href="/liceo/documentos.html">Documentos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/liceo/contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" id="navInicio" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" id="navNoticias" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
+          <li class="nav-item"><a class="nav-link" id="navDocumentos" href="/liceo/documentos.html">Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" id="navContacto" href="/liceo/contacto.html">Contacto</a></li>
         </ul>
-        <select class="form-select form-select-sm" style="width:120px"><option>ES - Español</option><option>EN - English</option></select>
+        <select class="form-select form-select-sm" id="langSelect" style="width:120px"><option value="es">ES - Español</option><option value="en">EN - English</option></select>
       </div>
     </div>
   </nav>
 
   <main class="container py-4">
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
-      <h1 class="h4 m-0">Noticias y Comunicados</h1>
+      <h1 class="h4 m-0" id="pageTitle">Noticias y Comunicados</h1>
       <div class="d-flex align-items-center gap-2">
-        <span class="small text-secondary">Categoría:</span>
+        <span class="small text-secondary" id="lblCategoria">Categoría:</span>
         <select id="category" class="form-select form-select-sm" style="width:200px">
-          <option value="Todas">Todas</option>
-          <option>Comunicados</option>
-          <option>Eventos</option>
-          <option>Académico</option>
+          <option id="optTodas" value="Todas">Todas</option>
+          <option id="optComunicados">Comunicados</option>
+          <option id="optEventos">Eventos</option>
+          <option id="optAcademico">Académico</option>
         </select>
       </div>
     </div>
@@ -99,6 +99,11 @@
     {id:'n6', title:'Biblioteca: Nuevas Adquisiciones', date:'2025-07-10', category:'Académico', excerpt:'Nuevos títulos a la colección.', images:['https://images.unsplash.com/photo-1498243691581-b145c3f54a5a','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']}
   ];
 
+  const I18N = {
+    es: { title:'Noticias y Comunicados', category:'Categoría:', all:'Todas', comunicados:'Comunicados', eventos:'Eventos', academico:'Académico', prev:'Anteriores', next:'Siguientes', detail:'Ver detalle', backTop:'Ir arriba' },
+    en: { title:'News & Announcements', category:'Category:', all:'All', comunicados:'Announcements', eventos:'Events', academico:'Academic', prev:'Previous', next:'Next', detail:'View details', backTop:'Go to top' }
+  };
+
   const state = { page: 1, pageSize: 6, category: 'Todas' };
   const grid = document.getElementById('newsGrid');
   const pageInfo = document.getElementById('pageInfo');
@@ -106,7 +111,7 @@
   const nextBtn = document.getElementById('nextBtn');
 
   function currentList(){
-    const list = state.category==='Todas' ? NEWS : NEWS.filter(n=>n.category===state.category);
+    const list = (state.category==='Todas'||state.category==='All') ? NEWS : NEWS.filter(n=>n.category===state.category || (state.category==='Announcements'&&n.category==='Comunicados') || (state.category==='Events'&&n.category==='Eventos') || (state.category==='Academic'&&n.category==='Académico'));
     return [...list].sort((a,b)=>a.date<b.date?1:-1);
   }
 
@@ -117,9 +122,10 @@
     const items = list.slice((state.page-1)*state.pageSize, state.page*state.pageSize);
 
     grid.innerHTML = '';
-    items.forEach(n=>{
+    items.forEach((n, idx)=>{
       const col = document.createElement('div');
       col.className = 'col-12 col-sm-6 col-lg-4 reveal';
+      col.style.transitionDelay = `${idx*60}ms`;
       col.innerHTML = `
         <article class="card h-100 card-hover">
           <img class="thumb" src="${n.images[0]}" alt="${n.title}">
@@ -128,7 +134,7 @@
             <p class="text-muted small mb-1">${new Date(n.date).toLocaleDateString()}</p>
             <h3 class="h6">${n.title}</h3>
             <p class="small text-secondary">${n.excerpt}</p>
-            <button class="btn btn-sm btn-primary-liceo" data-id="${n.id}">Ver detalle</button>
+            <button class="btn btn-sm btn-primary-liceo" data-id="${n.id}" id="btnDetail_${n.id}">Ver detalle</button>
           </div>
         </article>`;
       grid.appendChild(col);
@@ -164,22 +170,44 @@
     n.images.forEach((src, i)=>{
       const d = document.createElement('div');
       d.className = 'carousel-item'+(i===0?' active':'');
-      d.innerHTML = `<img class="d-block w-100" style="max-height:420px;object-fit:cover" src="${src}" alt="${n.title} ${i+1}">`;
+      d.innerHTML = `<img class=\"d-block w-100\" style=\"max-height:420px;object-fit:cover\" src=\"${src}\" alt=\"${n.title} ${i+1}\">`;
       inner.appendChild(d);
     });
     modal.show();
   }
 
-  // Back to top
+  // Back to top y sombra navbar
   const backTop = document.getElementById('backTop');
-  window.addEventListener('scroll',()=> backTop.classList.toggle('show', window.scrollY>240));
+  window.addEventListener('scroll',()=>{
+    backTop.classList.toggle('show', window.scrollY>240);
+    document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12);
+  });
   backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  // I18N
+  const langSelect = document.getElementById('langSelect');
+  const savedLang = localStorage.getItem('lang')||'es';
+  langSelect.value = savedLang; applyI18n(savedLang);
+  langSelect.addEventListener('change', (e)=>{ localStorage.setItem('lang', e.target.value); applyI18n(e.target.value); });
+
+  function applyI18n(lang){
+    const d = I18N[lang] || I18N.es;
+    document.getElementById('pageTitle').textContent = d.title;
+    document.getElementById('lblCategoria').textContent = d.category;
+    document.getElementById('optTodas').textContent = d.all;
+    document.getElementById('optComunicados').textContent = d.comunicados;
+    document.getElementById('optEventos').textContent = d.eventos;
+    document.getElementById('optAcademico').textContent = d.academico;
+    prevBtn.textContent = d.prev; nextBtn.textContent = d.next;
+    document.getElementById('backTop').setAttribute('aria-label', d.backTop);
+    document.getElementById('backTop').setAttribute('title', d.backTop);
+    // traducir botones de detalle ya renderizados
+    document.querySelectorAll('[id^="btnDetail_"]').forEach(b=> b.textContent = d.detail);
+  }
 
   // Inicial
   document.getElementById('year').textContent = new Date().getFullYear();
   render();
-
-  // Si viene con hash de noticia -> abrir detalle
   if(location.hash){ const id=location.hash.replace('#',''); if(NEWS.find(n=>n.id===id)) openDetail(id); }
   </script>
 </body>
