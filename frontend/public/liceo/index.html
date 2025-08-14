@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liceo - Inicio</title>
+  <meta name="description" content="Sitio institucional del Liceo - Inicio">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/css/liceo.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar bg-primary-liceo text-white py-1 small sticky-top" style="z-index:1060">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3 align-items-center">
+        <a href="mailto:contacto@liceo.edu.cl" class="d-inline-flex align-items-center gap-1"><i class="bi bi-envelope icon"></i><span>contacto@liceo.edu.cl</span></a>
+        <a href="tel:+56223456789" class="d-none d-sm-inline-flex align-items-center gap-1"><i class="bi bi-telephone icon"></i><span>+56 2 2345 6789</span></a>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="#" aria-label="Facebook" class="icon"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram" class="icon"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="/liceo/index.html" aria-label="Inicio">
+        <span class="rounded" style="width:32px;height:32px;background:var(--aqua);display:inline-block"></span>
+        <strong>Liceo</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+            <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+              <li><a class="dropdown-item" href="#historia">Historia</a></li>
+              <li><a class="dropdown-item" href="#mision">Misión</a></li>
+              <li><a class="dropdown-item" href="#vision">Visión</a></li>
+              <li><a class="dropdown-item" href="#comunidad">Comunidad Educativa</a></li>
+              <li><a class="dropdown-item" href="#pme">PME</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#oferta">Oferta Educativa</a></li>
+          <li class="nav-item"><a class="nav-link" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cal-actividades">Calendario de Actividades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cal-evaluaciones">Calendario de Evaluaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#uniforme">Uniforme Escolar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#talleres">Talleres Extraescolares</a></li>
+          <li class="nav-item"><a class="nav-link" href="/liceo/documentos.html">Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="/liceo/contacto.html">Contacto</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <select class="form-select form-select-sm" id="langSelect" style="width:120px" aria-label="Selector de idioma">
+            <option value="es" selected>ES - Español</option>
+            <option value="en">EN - English</option>
+          </select>
+          <a class="btn btn-primary-liceo btn-sm" href="#admision">Admisión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Slider -->
+  <section class="soft-bg py-3">
+    <div class="container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" aria-label="Slider institucional">
+        <div class="carousel-inner rounded overflow-hidden position-relative">
+          <div class="hero-gradient"></div>
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1723958461974-4d15c8b32ec6" class="d-block w-100" alt="Campus moderno" loading="lazy">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1702737832079-ed5864397f92" class="d-block w-100" alt="Edificio institucional" loading="lazy">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1728500704191-af0407c47035" class="d-block w-100" alt="Edificio blanco" loading="lazy">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accesos rápidos -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="section-title h5 mb-3">Accesos Rápidos</h2>
+      <div class="row g-3" id="quickLinks">
+        <div class="col-md-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <h3 class="h6">Calendario de Actividades</h3>
+              <a href="#cal-actividades" class="link-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <h3 class="h6">Noticias y Comunicados</h3>
+              <a href="/liceo/noticias.html" class="link-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+              <h3 class="h6">Documentos</h3>
+              <a href="/liceo/documentos.html" class="link-primary">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Últimas Noticias -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="section-title h5 mb-3">Últimas Noticias</h2>
+      <div class="row g-3" id="latestNews"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5 py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h3 class="h6 text-white mb-3">Mapa del Sitio</h3>
+          <ul class="list-unstyled small">
+            <li><a href="/liceo/index.html">Inicio</a></li>
+            <li><a href="/liceo/noticias.html">Noticias</a></li>
+            <li><a href="/liceo/documentos.html">Documentos</a></li>
+            <li><a href="/liceo/contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h6 text-white mb-3">Datos de Contacto</h3>
+          <ul class="list-unstyled small">
+            <li><i class="bi bi-envelope"></i> contacto@liceo.edu.cl</li>
+            <li><i class="bi bi-telephone"></i> +56 2 2345 6789</li>
+            <li>Av. Educativa 1234, Santiago, Chile</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h6 text-white mb-3">Redes</h3>
+          <div class="d-flex gap-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary opacity-25 my-4">
+      <div class="small text-secondary">© <span id="year"></span> Liceo. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba"><i class="bi bi-chevron-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Mock de datos compartidos
+  const NEWS = [
+    {id:'n1', title:'Inicio de Clases 2025', date:'2025-03-04', category:'Comunicados', excerpt:'Bienvenida a toda la comunidad educativa al nuevo año escolar 2025.', images:['https://images.pexels.com/photos/33415773/pexels-photo-33415773.jpeg','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']},
+    {id:'n2', title:'Feria de Ciencias Regional', date:'2025-05-18', category:'Eventos', excerpt:'Participa de la feria con proyectos innovadores y trabajos colaborativos.', images:['https://images.unsplash.com/photo-1498243691581-b145c3f54a5a','https://images.unsplash.com/photo-1536985576470-b7e4a0363a19']},
+    {id:'n3', title:'Taller de Lectura Crítica', date:'2025-06-10', category:'Académico', excerpt:'Nuevo taller de habilidades lectoras disponible para 1º a 4º medio.', images:['https://images.unsplash.com/photo-1524995997946-a1c2e315a42f','https://images.pexels.com/photos/7929418/pexels-photo-7929418.jpeg']},
+    {id:'n4', title:'Campeonato Deportivo Escolar', date:'2025-04-22', category:'Eventos', excerpt:'Inscripciones abiertas para selecciones deportivas.', images:['https://images.unsplash.com/photo-1702737832079-ed5864397f92','https://images.unsplash.com/photo-1728500704191-af0407c47035']},
+    {id:'n5', title:'Entrega de Informes de Notas', date:'2025-07-01', category:'Comunicados', excerpt:'Publicación de evaluaciones del primer semestre en plataforma.', images:['https://images.unsplash.com/photo-1536985576470-b7e4a0363a19','https://images.pexels.com/photos/33415745/pexels-photo-33415745.jpeg']},
+    {id:'n6', title:'Biblioteca: Nuevas Adquisiciones', date:'2025-07-10', category:'Académico', excerpt:'Se incorporan nuevos títulos a la colección.', images:['https://images.unsplash.com/photo-1498243691581-b145c3f54a5a','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']},
+  ];
+
+  // Año en footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Render últimas 5 noticias
+  const latest = [...NEWS].sort((a,b)=>a.date<b.date?1:-1).slice(0,5);
+  const latestContainer = document.getElementById('latestNews');
+  latest.forEach(n => {
+    const col = document.createElement('div');
+    col.className = 'col-12 col-sm-6 col-lg-4 col-xxl-3 reveal';
+    col.innerHTML = `
+      <article class="card h-100 card-hover" role="article">
+        <img class="thumb" src="${n.images[0]}" alt="${n.title}">
+        <div class="card-body">
+          <p class="text-muted small mb-1">${new Date(n.date).toLocaleDateString()}</p>
+          <h3 class="h6">${n.title}</h3>
+          <p class="small text-secondary">${n.excerpt}</p>
+          <a href="/liceo/noticias.html#${n.id}" class="link-success">Ver detalle</a>
+        </div>
+      </article>`;
+    latestContainer.appendChild(col);
+  });
+
+  // Intersección para revelar
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:.2});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>240){ backTop.classList.add('show'); } else { backTop.classList.remove('show'); }
+  });
+  backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Pequeña animación al abrir menú móvil (suaviza colapso)
+  const navbarMain = document.getElementById('navbarMain');
+  navbarMain.addEventListener('show.bs.collapse',()=> navbarMain.style.transition='height .25s ease');
+
+  // Idiomas (demo ligero)
+  const i18n = {
+    es: { quick:'Accesos Rápidos', last:'Últimas Noticias' },
+    en: { quick:'Quick Links', last:'Latest News' }
+  };
+  document.getElementById('langSelect').addEventListener('change', (e)=>{
+    const l=e.target.value; const dict=i18n[l]||i18n.es;
+    document.querySelector('h2.section-title.h5.mb-3').textContent = dict.quick;
+    document.querySelectorAll('h2.section-title.h5.mb-3')[1].textContent = dict.last;
+  });
+  </script>
+</body>
+</html>
