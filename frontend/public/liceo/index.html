@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <!-- Navbar (igualada en todo el sitio) -->
+  <!-- Navbar (igualada + Nosotros con submenú) -->
   <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="/liceo/index.html" aria-label="Inicio">
@@ -37,11 +37,22 @@
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navList">
           <li class="nav-item"><a class="nav-link active" id="navInicio" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="nosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+            <ul class="dropdown-menu" aria-labelledby="nosDropdown">
+              <li><a class="dropdown-item" href="/liceo/nosotros-historia.html">Historia</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-mision.html">Misión</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-vision.html">Visión</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-comunidad.html">Comunidad Educativa</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-pme.html">PME</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" id="navOferta" href="/liceo/oferta.html">Oferta Educativa</a></li>
           <li class="nav-item"><a class="nav-link" id="navCalAct" href="/liceo/calendario-actividades.html">Calendario de Actividades</a></li>
           <li class="nav-item"><a class="nav-link" id="navCalEval" href="/liceo/calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
           <li class="nav-item"><a class="nav-link" id="navUniforme" href="/liceo/uniforme.html">Uniforme Escolar</a></li>
           <li class="nav-item"><a class="nav-link" id="navTalleres" href="/liceo/talleres.html">Talleres Extraescolares</a></li>
+          <li class="nav-item"><a class="nav-link" id="navNoticias" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
           <li class="nav-item"><a class="nav-link" id="navDocumentos" href="/liceo/documentos.html">Documentos</a></li>
           <li class="nav-item"><a class="nav-link" id="navContacto" href="/liceo/contacto.html">Contacto</a></li>
         </ul>
@@ -114,6 +125,58 @@
     </div>
   </section>
 
+  <!-- Diario Mural Digital -->
+  <section id="mural" class="py-4">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="section-title h5 m-0" id="muralTitle">Diario Mural Digital</h2>
+        <div class="d-flex align-items-center gap-2">
+          <label for="muralFilter" class="small text-secondary" id="muralFilterLabel">Categoría:</label>
+          <select id="muralFilter" class="form-select form-select-sm" style="width:200px">
+            <option value="all" selected>Todos</option>
+            <option value="Comunicados">Comunicados</option>
+            <option value="Eventos">Eventos</option>
+            <option value="Académico">Académico</option>
+            <option value="Recordatorio">Recordatorio</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mural p-3 rounded">
+        <form id="muralForm" class="row g-2 align-items-end">
+          <div class="col-12 col-md-3">
+            <label class="form-label small" for="mTitle" id="mTitleLabel">Título</label>
+            <input id="mTitle" class="form-control form-control-sm" required maxlength="60" />
+          </div>
+          <div class="col-12 col-md-5">
+            <label class="form-label small" for="mBody" id="mBodyLabel">Mensaje</label>
+            <input id="mBody" class="form-control form-control-sm" required maxlength="140" />
+          </div>
+          <div class="col-6 col-md-2">
+            <label class="form-label small" for="mCat" id="mCatLabel">Categoría</label>
+            <select id="mCat" class="form-select form-select-sm">
+              <option>Comunicados</option>
+              <option>Eventos</option>
+              <option>Académico</option>
+              <option>Recordatorio</option>
+            </select>
+          </div>
+          <div class="col-6 col-md-1">
+            <div class="form-check" title="Fijar en la parte superior">
+              <input class="form-check-input" type="checkbox" id="mPin" />
+              <label class="form-check-label small" for="mPin" id="mPinLabel">Fijar</label>
+            </div>
+          </div>
+          <div class="col-12 col-md-1 d-grid">
+            <button class="btn btn-sm btn-primary-liceo" type="submit" id="mAddBtn">Agregar</button>
+          </div>
+        </form>
+
+        <div class="mural-grid mt-3" id="muralGrid" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Últimas Noticias -->
   <section id="ultimas" class="py-4">
     <div class="container">
@@ -173,20 +236,16 @@
   // ------- I18N sencillo ---------
   const I18N = {
     es: {
-      nav:{inicio:'Inicio', noticias:'Noticias y Comunicados', documentos:'Documentos', contacto:'Contacto'},
-      quick:'Accesos Rápidos', latest:'Últimas Noticias', seeMore:'Ver más', sitemap:'Mapa del Sitio', contactData:'Datos de Contacto', rights:'Todos los derechos reservados.', backTop:'Ir arriba'
+      quick:'Accesos Rápidos', latest:'Últimas Noticias', seeMore:'Ver más', sitemap:'Mapa del Sitio', contactData:'Datos de Contacto', rights:'Todos los derechos reservados.', backTop:'Ir arriba',
+      muralTitle:'Diario Mural Digital', cat:'Categoría:', title:'Título', body:'Mensaje', add:'Agregar', pin:'Fijar', all:'Todos'
     },
     en: {
-      nav:{inicio:'Home', noticias:'News & Announcements', documentos:'Documents', contacto:'Contact'},
-      quick:'Quick Links', latest:'Latest News', seeMore:'See more', sitemap:'Sitemap', contactData:'Contact Info', rights:'All rights reserved.', backTop:'Go to top'
+      quick:'Quick Links', latest:'Latest News', seeMore:'See more', sitemap:'Sitemap', contactData:'Contact Info', rights:'All rights reserved.', backTop:'Go to top',
+      muralTitle:'Digital Bulletin Board', cat:'Category:', title:'Title', body:'Message', add:'Add', pin:'Pin', all:'All'
     }
   };
   function applyI18n(lang){
     const d = I18N[lang] || I18N.es;
-    document.getElementById('navInicio').textContent = d.nav?.inicio || 'Inicio';
-    document.getElementById('navNoticias').textContent = (d.nav?.news||d.nav?.noticias)||'Noticias y Comunicados';
-    document.getElementById('navDocumentos').textContent = d.nav?.documentos || 'Documentos';
-    document.getElementById('navContacto').textContent = d.nav?.contacto || 'Contacto';
     document.getElementById('i18nQuick').textContent = d.quick;
     document.getElementById('i18nLatest').textContent = d.latest;
     document.getElementById('i18nSeeMore1').textContent = d.seeMore;
@@ -197,6 +256,15 @@
     document.getElementById('rightsText').textContent = d.rights;
     document.getElementById('backTop').setAttribute('title', d.backTop);
     document.getElementById('backTop').setAttribute('aria-label', d.backTop);
+
+    document.getElementById('muralTitle').textContent = d.muralTitle;
+    document.getElementById('muralFilterLabel').textContent = d.cat;
+    document.getElementById('mTitleLabel').textContent = d.title;
+    document.getElementById('mBodyLabel').textContent = d.body;
+    document.getElementById('mCatLabel').textContent = d.cat;
+    document.getElementById('mPinLabel').textContent = d.pin;
+    document.getElementById('mAddBtn').textContent = d.add;
+    document.querySelector('#muralFilter option[value="all"]').textContent = d.all;
   }
 
   const savedLang = localStorage.getItem('lang') || 'es';
@@ -221,7 +289,7 @@
           <p class=\"text-muted small mb-1\">${new Date(n.date).toLocaleDateString()}</p>
           <h3 class=\"h6\">${n.title}</h3>
           <p class=\"small text-secondary\">${n.excerpt}</p>
-          <a href=\"/liceo/noticias.html#${n.id}\" class=\"link-success\" id=\"seeMore_${n.id}\">Ver detalle</a>
+          <a href=\"/liceo/noticias.html#${n.id}\" class=\"link-success\">Ver detalle</a>
         </div>
       </article>`;
     latestContainer.appendChild(col);
@@ -253,6 +321,82 @@
     });
   }
   updateParallax();
+
+  // --------- Diario Mural (localStorage) ----------
+  const MURAL_KEY = 'mural_notes_v1';
+  const muralGrid = document.getElementById('muralGrid');
+  const muralFilter = document.getElementById('muralFilter');
+  const form = document.getElementById('muralForm');
+
+  const seed = [
+    { id:'a1', title:'Reunión de Apoderados', body:'Jueves 19:00 en sala de clases.', cat:'Comunicados', pinned:true, createdAt:'2025-07-01T10:00:00Z' },
+    { id:'a2', title:'Ensayo PSU', body:'Simulacro este sábado 09:00.', cat:'Académico', pinned:false, createdAt:'2025-07-02T12:00:00Z' },
+    { id:'a3', title:'Campeonato Inter-Escolar', body:'Inscripciones abiertas hasta el viernes.', cat:'Eventos', pinned:false, createdAt:'2025-07-03T09:00:00Z' },
+    { id:'a4', title:'Traer delantal para laboratorio', body:'Actividad práctica de química.', cat:'Recordatorio', pinned:false, createdAt:'2025-07-04T08:00:00Z' }
+  ];
+  if(!localStorage.getItem(MURAL_KEY)) localStorage.setItem(MURAL_KEY, JSON.stringify(seed));
+
+  function loadNotes(){
+    return JSON.parse(localStorage.getItem(MURAL_KEY)||'[]');
+  }
+  function saveNotes(list){
+    localStorage.setItem(MURAL_KEY, JSON.stringify(list));
+  }
+  function renderNotes(){
+    const list = loadNotes();
+    const cat = muralFilter.value;
+    const sorted = [...list].sort((a,b)=> (a.pinned===b.pinned ? (a.createdAt<b.createdAt?1:-1) : (a.pinned? -1:1)));
+    const filtered = cat==='all' ? sorted : sorted.filter(n=>n.cat===cat);
+    muralGrid.innerHTML = '';
+    filtered.forEach((n, idx)=>{
+      const div = document.createElement('div');
+      const rot = ((idx%5)-2)*0.6; // pequeña variación
+      div.innerHTML = `
+        <article class=\"note ${n.pinned?'note-pinned':''} reveal\" style=\"--r:${rot}deg\" aria-label=\"${n.title}\">
+          <div class=\"d-flex align-items-center justify-content-between\">
+            <div>
+              <span class=\"badge bg-warning-subtle text-dark border\">${n.cat}</span>
+              ${n.pinned?'<span class=\"badge bg-info-subtle text-dark border\"><i class=\"bi bi-pin-angle\"></i> Pin</span>':''}
+            </div>
+            <small class=\"text-muted\">${new Date(n.createdAt).toLocaleDateString()}</small>
+          </div>
+          <h3 class=\"h6 mt-1 mb-1\">${n.title}</h3>
+          <p class=\"small mb-2\">${n.body}</p>
+          <div class=\"d-flex gap-2\">
+            <button class=\"btn btn-sm btn-outline-secondary\" aria-label=\"Fijar\" data-act=\"pin\" data-id=\"${n.id}\"><i class=\"bi bi-pin-angle\"></i></button>
+            <button class=\"btn btn-sm btn-outline-danger\" aria-label=\"Eliminar\" data-act=\"del\" data-id=\"${n.id}\"><i class=\"bi bi-trash\"></i></button>
+          </div>
+        </article>`;
+      muralGrid.appendChild(div.firstElementChild);
+    });
+    document.querySelectorAll('#muralGrid [data-act]').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const id = btn.getAttribute('data-id');
+        const act = btn.getAttribute('data-act');
+        const list = loadNotes();
+        const idx = list.findIndex(x=>x.id===id);
+        if(idx<0) return;
+        if(act==='del'){ list.splice(idx,1); }
+        if(act==='pin'){ list[idx].pinned = !list[idx].pinned; }
+        saveNotes(list); renderNotes();
+      });
+    });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const title = document.getElementById('mTitle').value.trim();
+    const body = document.getElementById('mBody').value.trim();
+    const cat = document.getElementById('mCat').value;
+    const pinned = document.getElementById('mPin').checked;
+    if(!title || !body) return;
+    const list = loadNotes();
+    list.push({ id: crypto.randomUUID(), title, body, cat, pinned, createdAt: new Date().toISOString() });
+    saveNotes(list); form.reset(); renderNotes();
+  });
+  muralFilter.addEventListener('change', renderNotes);
+  renderNotes();
 
   </script>
 </body>
