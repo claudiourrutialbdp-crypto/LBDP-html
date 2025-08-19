@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Liceo - Noticias</title>
+  <title>Liceo - Noticias y Comunicados</title>
+  <meta name="description" content="Noticias y comunicados oficiales del Liceo.">
+  <meta property="og:title" content="Noticias y Comunicados - Liceo">
+  <meta property="og:description" content="Mantente informado con las últimas novedades.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#1418c4">
+  <meta name="theme-color" content="#1418c4">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="/assets/css/liceo.css" rel="stylesheet">
@@ -30,6 +39,16 @@
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" id="navInicio" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nosotros</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/liceo/nosotros-historia.html">Historia</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-mision.html">Misión</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-vision.html">Visión</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-comunidad.html">Comunidad Educativa</a></li>
+              <li><a class="dropdown-item" href="/liceo/nosotros-pme.html">PME</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" id="navOferta" href="/liceo/oferta.html">Oferta Educativa</a></li>
           <li class="nav-item"><a class="nav-link" id="navCalAct" href="/liceo/calendario-actividades.html">Calendario de Actividades</a></li>
           <li class="nav-item"><a class="nav-link" id="navCalEval" href="/liceo/calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
@@ -45,6 +64,7 @@
   </nav>
 
   <main class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="/liceo/index.html">Inicio</a></li><li class="breadcrumb-item active" aria-current="page" id="bcCurrent">Noticias y Comunicados</li></ol></nav>
     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
       <h1 class="h4 m-0" id="pageTitle">Noticias y Comunicados</h1>
       <div class="d-flex align-items-center gap-2">
@@ -67,7 +87,6 @@
     </div>
   </main>
 
-  <!-- Modal detalle / galería -->
   <div class="modal fade" id="newsModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -105,8 +124,8 @@
   ];
 
   const I18N = {
-    es: { title:'Noticias y Comunicados', category:'Categoría:', all:'Todas', comunicados:'Comunicados', eventos:'Eventos', academico:'Académico', prev:'Anteriores', next:'Siguientes', detail:'Ver detalle', backTop:'Ir arriba' },
-    en: { title:'News & Announcements', category:'Category:', all:'All', comunicados:'Announcements', eventos:'Events', academico:'Academic', prev:'Previous', next:'Next', detail:'View details', backTop:'Go to top' }
+    es: { title:'Noticias y Comunicados', bc:'Noticias y Comunicados', category:'Categoría:', all:'Todas', comunicados:'Comunicados', eventos:'Eventos', academico:'Académico', prev:'Anteriores', next:'Siguientes', detail:'Ver detalle', backTop:'Ir arriba' },
+    en: { title:'News & Announcements', bc:'News & Announcements', category:'Category:', all:'All', comunicados:'Announcements', eventos:'Events', academico:'Academic', prev:'Previous', next:'Next', detail:'View details', backTop:'Go to top' }
   };
 
   const state = { page: 1, pageSize: 6, category: 'Todas' };
@@ -124,8 +143,73 @@
     const list = currentList();
     const totalPages = Math.max(1, Math.ceil(list.length/state.pageSize));
     state.page = Math.min(state.page, totalPages);
-    const items = list.slice((state.page-1)*state.pageSize, state.page*stateSize);
+    const items = list.slice((state.page-1)*state.pageSize, state.page*state.pageSize);
+
+    grid.innerHTML = '';
+    items.forEach((n, idx)=>{
+      const col = document.createElement('div');
+      col.className = 'col-12 col-sm-6 col-lg-4 reveal';
+      col.style.transitionDelay = `${idx*60}ms`;
+      col.innerHTML = `
+        <article class=\"card h-100 card-hover\">
+          <img class=\"thumb\" src=\"${n.images[0]}\" alt=\"${n.title}\">
+          <div class=\"card-body\">
+            <span class=\"badge badge-liceo small\">${n.category}</span>
+            <p class=\"text-muted small mb-1\">${new Date(n.date).toLocaleDateString()}</p>
+            <h3 class=\"h6\">${n.title}</h3>
+            <p class=\"small text-secondary\">${n.excerpt}</p>
+            <button class=\"btn btn-sm btn-primary-liceo\" data-id=\"${n.id}\" id=\"btnDetail_${n.id}\">Ver detalle</button>
+          </div>
+        </article>`;
+      grid.appendChild(col);
+    });
+
+    pageInfo.textContent = `${state.page} / ${Math.max(1, Math.ceil(list.length/state.pageSize))}`;
+    prevBtn.disabled = state.page===1; nextBtn.disabled = state.page>=totalPages;
+
+    document.querySelectorAll('#newsGrid button[data-id]').forEach(btn=>{
+      btn.addEventListener('click',()=> openDetail(btn.getAttribute('data-id')));
+    });
+
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   }
+
+  const io=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:.2});
+
+  prevBtn.addEventListener('click',()=>{ state.page=Math.max(1, state.page-1); render(); });
+  nextBtn.addEventListener('click',()=>{ state.page=state.page+1; render(); });
+  document.getElementById('category').addEventListener('change',(e)=>{ state.category=e.target.value; state.page=1; render(); });
+
+  const modal = new bootstrap.Modal(document.getElementById('newsModal'));
+  function openDetail(id){
+    const n = NEWS.find(x=>x.id===id);
+    if(!n) return;
+    document.getElementById('newsTitle').textContent = n.title;
+    document.getElementById('newsMeta').textContent = `${new Date(n.date).toLocaleDateString()} • ${n.category}`;
+    const inner = document.getElementById('galleryInner');
+    inner.innerHTML = '';
+    n.images.forEach((src, i)=>{
+      const d = document.createElement('div');
+      d.className = 'carousel-item'+(i===0?' active':'');
+      d.innerHTML = `<img class=\"d-block w-100\" style=\"max-height:420px;object-fit:cover\" src=\"${src}\" alt=\"${n.title} ${i+1}\">`;
+      inner.appendChild(d);
+    });
+    modal.show();
+  }
+
+  // I18N aplicar
+  const savedLang = localStorage.getItem('lang')||'es';
+  const sel = document.getElementById('langSelect'); sel.value=savedLang; applyI18n(savedLang);
+  sel.addEventListener('change', e=>{ localStorage.setItem('lang', e.target.value); applyI18n(e.target.value); });
+  function applyI18n(l){ const d=I18N[l]||I18N.es; document.getElementById('pageTitle').textContent=d.title; document.getElementById('bcCurrent').textContent=d.bc; document.getElementById('lblCategoria').textContent=d.category; document.getElementById('optTodas').textContent=d.all; document.getElementById('optComunicados').textContent=d.comunicados; document.getElementById('optEventos').textContent=d.eventos; document.getElementById('optAcademico').textContent=d.academico; prevBtn.textContent=d.prev; nextBtn.textContent=d.next; document.getElementById('backTop').setAttribute('aria-label', d.backTop); document.getElementById('backTop').setAttribute('title', d.backTop); document.querySelectorAll('[id^="btnDetail_"]').forEach(b=> b.textContent = d.detail); }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  render();
+  if(location.hash){ const id=location.hash.replace('#',''); if(NEWS.find(n=>n.id===id)) openDetail(id); }
+
+  const backTop=document.getElementById('backTop');
+  window.addEventListener('scroll',()=>{ backTop.classList.toggle('show', window.scrollY>240); document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12); });
+  backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
   </script>
 </body>
 </html>
