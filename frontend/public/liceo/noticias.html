@@ -30,6 +30,11 @@
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" id="navInicio" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" id="navOferta" href="/liceo/oferta.html">Oferta Educativa</a></li>
+          <li class="nav-item"><a class="nav-link" id="navCalAct" href="/liceo/calendario-actividades.html">Calendario de Actividades</a></li>
+          <li class="nav-item"><a class="nav-link" id="navCalEval" href="/liceo/calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
+          <li class="nav-item"><a class="nav-link" id="navUniforme" href="/liceo/uniforme.html">Uniforme Escolar</a></li>
+          <li class="nav-item"><a class="nav-link" id="navTalleres" href="/liceo/talleres.html">Talleres Extraescolares</a></li>
           <li class="nav-item"><a class="nav-link active" id="navNoticias" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
           <li class="nav-item"><a class="nav-link" id="navDocumentos" href="/liceo/documentos.html">Documentos</a></li>
           <li class="nav-item"><a class="nav-link" id="navContacto" href="/liceo/contacto.html">Contacto</a></li>
@@ -119,96 +124,8 @@
     const list = currentList();
     const totalPages = Math.max(1, Math.ceil(list.length/state.pageSize));
     state.page = Math.min(state.page, totalPages);
-    const items = list.slice((state.page-1)*state.pageSize, state.page*state.pageSize);
-
-    grid.innerHTML = '';
-    items.forEach((n, idx)=>{
-      const col = document.createElement('div');
-      col.className = 'col-12 col-sm-6 col-lg-4 reveal';
-      col.style.transitionDelay = `${idx*60}ms`;
-      col.innerHTML = `
-        <article class="card h-100 card-hover">
-          <img class="thumb" src="${n.images[0]}" alt="${n.title}">
-          <div class="card-body">
-            <span class="badge badge-liceo small">${n.category}</span>
-            <p class="text-muted small mb-1">${new Date(n.date).toLocaleDateString()}</p>
-            <h3 class="h6">${n.title}</h3>
-            <p class="small text-secondary">${n.excerpt}</p>
-            <button class="btn btn-sm btn-primary-liceo" data-id="${n.id}" id="btnDetail_${n.id}">Ver detalle</button>
-          </div>
-        </article>`;
-      grid.appendChild(col);
-    });
-
-    pageInfo.textContent = `${state.page} / ${Math.max(1, Math.ceil(list.length/state.pageSize))}`;
-    prevBtn.disabled = state.page===1; nextBtn.disabled = state.page>=totalPages;
-
-    document.querySelectorAll('#newsGrid button[data-id]').forEach(btn=>{
-      btn.addEventListener('click',()=> openDetail(btn.getAttribute('data-id')));
-    });
-
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const items = list.slice((state.page-1)*state.pageSize, state.page*stateSize);
   }
-
-  // Reveal
-  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); }, {threshold:.2});
-
-  // Paginación
-  prevBtn.addEventListener('click',()=>{ state.page=Math.max(1, state.page-1); render(); });
-  nextBtn.addEventListener('click',()=>{ state.page=state.page+1; render(); });
-  document.getElementById('category').addEventListener('change',(e)=>{ state.category=e.target.value; state.page=1; render(); });
-
-  // Detalle (modal + galería)
-  const modal = new bootstrap.Modal(document.getElementById('newsModal'));
-  function openDetail(id){
-    const n = NEWS.find(x=>x.id===id);
-    if(!n) return;
-    document.getElementById('newsTitle').textContent = n.title;
-    document.getElementById('newsMeta').textContent = `${new Date(n.date).toLocaleDateString()} • ${n.category}`;
-    const inner = document.getElementById('galleryInner');
-    inner.innerHTML = '';
-    n.images.forEach((src, i)=>{
-      const d = document.createElement('div');
-      d.className = 'carousel-item'+(i===0?' active':'');
-      d.innerHTML = `<img class=\"d-block w-100\" style=\"max-height:420px;object-fit:cover\" src=\"${src}\" alt=\"${n.title} ${i+1}\">`;
-      inner.appendChild(d);
-    });
-    modal.show();
-  }
-
-  // Back to top y sombra navbar
-  const backTop = document.getElementById('backTop');
-  window.addEventListener('scroll',()=>{
-    backTop.classList.toggle('show', window.scrollY>240);
-    document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12);
-  });
-  backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-  // I18N
-  const langSelect = document.getElementById('langSelect');
-  const savedLang = localStorage.getItem('lang')||'es';
-  langSelect.value = savedLang; applyI18n(savedLang);
-  langSelect.addEventListener('change', (e)=>{ localStorage.setItem('lang', e.target.value); applyI18n(e.target.value); });
-
-  function applyI18n(lang){
-    const d = I18N[lang] || I18N.es;
-    document.getElementById('pageTitle').textContent = d.title;
-    document.getElementById('lblCategoria').textContent = d.category;
-    document.getElementById('optTodas').textContent = d.all;
-    document.getElementById('optComunicados').textContent = d.comunicados;
-    document.getElementById('optEventos').textContent = d.eventos;
-    document.getElementById('optAcademico').textContent = d.academico;
-    prevBtn.textContent = d.prev; nextBtn.textContent = d.next;
-    document.getElementById('backTop').setAttribute('aria-label', d.backTop);
-    document.getElementById('backTop').setAttribute('title', d.backTop);
-    // traducir botones de detalle ya renderizados
-    document.querySelectorAll('[id^="btnDetail_"]').forEach(b=> b.textContent = d.detail);
-  }
-
-  // Inicial
-  document.getElementById('year').textContent = new Date().getFullYear();
-  render();
-  if(location.hash){ const id=location.hash.replace('#',''); if(NEWS.find(n=>n.id===id)) openDetail(id); }
   </script>
 </body>
 </html>

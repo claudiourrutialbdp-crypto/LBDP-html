@@ -27,10 +27,14 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/liceo/index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/liceo/noticias.html">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/liceo/documentos.html">Documentos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/liceo/contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" id="navInicio" href="/liceo/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" id="navOferta" href="/liceo/oferta.html">Oferta Educativa</a></li>
+          <li class="nav-item"><a class="nav-link" id="navCalAct" href="/liceo/calendario-actividades.html">Calendario de Actividades</a></li>
+          <li class="nav-item"><a class="nav-link" id="navCalEval" href="/liceo/calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
+          <li class="nav-item"><a class="nav-link" id="navUniforme" href="/liceo/uniforme.html">Uniforme Escolar</a></li>
+          <li class="nav-item"><a class="nav-link" id="navTalleres" href="/liceo/talleres.html">Talleres Extraescolares</a></li>
+          <li class="nav-item"><a class="nav-link active" id="navDocumentos" href="/liceo/documentos.html">Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" id="navContacto" href="/liceo/contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -63,17 +67,17 @@
     {id:'d3', name:'Calendario Académico', description:'Fechas relevantes del año escolar.', url:'#'}
   ];
   const body = document.getElementById('docsBody');
-  DOCUMENTS.forEach(d=>{
+  DOCUMENTS.forEach((d,i)=>{
     const tr = document.createElement('tr');
-    tr.className='reveal';
-    tr.innerHTML = `<td class="fw-medium">${d.name}</td><td>${d.description}</td><td class="text-end"><a class="btn btn-sm btn-outline-primary" href="${d.url}">Descargar</a></td>`;
+    tr.className='reveal'; tr.style.transitionDelay=`${i*40}ms`;
+    tr.innerHTML = `<td class=\"fw-medium\">${d.name}</td><td>${d.description}</td><td class=\"text-end\"><a class=\"btn btn-sm btn-outline-primary\" href=\"${d.url}\">Descargar</a></td>`;
     body.appendChild(tr);
   });
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.2});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   document.getElementById('year').textContent = new Date().getFullYear();
   const backTop=document.getElementById('backTop');
-  window.addEventListener('scroll',()=> backTop.classList.toggle('show', window.scrollY>240));
+  window.addEventListener('scroll',()=> { backTop.classList.toggle('show', window.scrollY>240); document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12); });
   backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
   </script>
 </body>
