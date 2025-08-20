@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liceo - Calendario de Actividades</title>
+  <meta name="description" content="Calendario de actividades del Liceo.">
+  <meta property="og:title" content="Calendario de Actividades - Liceo">
+  <meta property="og:description" content="Fechas de actos, reuniones y jornadas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1702737832079-ed5864397f92">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#1418c4">
+  <meta name="theme-color" content="#1418c4">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/css/liceo.css" rel="stylesheet">
+</head>
+<body>
+  <div class="topbar bg-primary-liceo text-white py-1 small sticky-top" style="z-index:1060"><div class="container d-flex justify-content-between align-items-center"><div class="d-flex gap-3 align-items-center"><a href="mailto:contacto@liceo.edu.cl" class="d-inline-flex align-items-center gap-1"><i class="bi bi-envelope icon"></i><span>contacto@liceo.edu.cl</span></a><a href="tel:+56223456789" class="d-none d-sm-inline-flex align-items-center gap-1"><i class="bi bi-telephone icon"></i><span>+56 2 2345 6789</span></a></div><div class="d-flex gap-3"><a href="#" aria-label="Facebook" class="icon"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram" class="icon"><i class="bi bi-instagram"></i></a></div></div></div>
+  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2" href="/liceo/index.html"><span class="rounded" style="width:32px;height:32px;background:var(--aqua);display:inline-block"></span><strong>Liceo</strong></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarMain"><ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item"><a class="nav-link" href="/liceo/index.html">Inicio</a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nosotros</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/liceo/nosotros-historia.html">Historia</a></li>
+        <li><a class="dropdown-item" href="/liceo/nosotros-mision.html">Misión</a></li>
+        <li><a class="dropdown-item" href="/liceo/nosotros-vision.html">Visión</a></li>
+        <li><a class="dropdown-item" href="/liceo/nosotros-comunidad.html">Comunidad Educativa</a></li>
+        <li><a class="dropdown-item" href="/liceo/nosotros-pme.html">PME</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/oferta.html">Oferta Educativa</a></li>
+    <li class="nav-item"><a class="nav-link active" href="/liceo/calendario-actividades.html">Calendario de Actividades</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/uniforme.html">Uniforme Escolar</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/talleres.html">Talleres Extraescolares</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/noticias.html">Noticias y Comunicados</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/documentos.html">Documentos</a></li>
+    <li class="nav-item"><a class="nav-link" href="/liceo/contacto.html">Contacto</a></li>
+  </ul><select class="form-select form-select-sm" id="langSelect" style="width:120px"><option value="es">ES - Español</option><option value="en">EN - English</option></select></div></div></nav>
+
+  <main class="container py-4">
+    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="/liceo/index.html">Inicio</a></li><li class="breadcrumb-item active" aria-current="page" id="bcCurrent">Calendario de Actividades</li></ol></nav>
+    <h1 class="h4" id="title">Calendario de Actividades</h1>
+    <p class="text-secondary" id="desc">Fechas de actos, reuniones y jornadas.</p>
+
+    <div class="table-responsive rounded border reveal mt-2">
+      <table class="table align-middle mb-0">
+        <thead class="table-light"><tr><th>Fecha</th><th>Actividad</th><th>Detalles</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <a class="btn btn-outline-primary btn-sm mt-3" href="#" id="download">Descargar PDF</a>
+  </main>
+
+  <footer class="footer mt-5 py-5"><div class="container small text-secondary">© <span id="year"></span> Liceo.</div></footer>
+  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba"><i class="bi bi-chevron-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const I18N={ es:{title:'Calendario de Actividades', bc:'Calendario de Actividades',desc:'Fechas de actos, reuniones y jornadas.',dl:'Descargar PDF',back:'Ir arriba'}, en:{title:'Activities Calendar', bc:'Activities Calendar',desc:'Ceremonies, meetings and events schedule.',dl:'Download PDF',back:'Go to top'} };
+  const DATA=[['2025-03-04','Acto de Inicio de Año','Patio central, 08:30'],['2025-05-18','Feria de Ciencias','Gimnasio, 10:00'],['2025-07-01','Entrega de Informes','Salas, 17:00']];
+  const saved=localStorage.getItem('lang')||'es';
+  const sel=document.getElementById('langSelect'); sel.value=saved; apply(saved);
+  function apply(l){ const d=I18N[l]||I18N.es; title.textContent=d.title; desc.textContent=d.desc; download.textContent=d.dl; document.getElementById('bcCurrent').textContent=d.bc; backTop.setAttribute('title', d.back); backTop.setAttribute('aria-label', d.back); }
+  sel.addEventListener('change',e=>{ localStorage.setItem('lang', e.target.value); apply(e.target.value); });
+  const tb=document.getElementById('tbody'); DATA.forEach((r,i)=>{ const tr=document.createElement('tr'); tr.className='reveal'; tr.style.transitionDelay=`${i*40}ms`; tr.innerHTML=`<td>${new Date(r[0]).toLocaleDateString()}</td><td>${r[1]}</td><td>${r[2]}</td>`; tb.appendChild(tr); });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.2}); document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const backTop=document.getElementById('backTop'); window.addEventListener('scroll',()=>{ backTop.classList.toggle('show', window.scrollY>240); document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12); }); backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
