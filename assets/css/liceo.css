@@ -64,10 +64,37 @@ body{
   background-clip: text;
 }
 
-.bg-primary-liceo{ background: var(--primary) !important; }
+.bg-primary-liceo{ background: var(--gradient-primary) !important; }
 .text-primary-liceo{ color: var(--primary) !important; }
-.btn-primary-liceo{ background: var(--primary); border-color: var(--primary); }
-.btn-primary-liceo:hover{ filter: brightness(0.9); }
+.btn-primary-liceo{ 
+  background: var(--gradient-primary); 
+  border: none; 
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-colored);
+}
+.btn-primary-liceo:hover{ 
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(20, 24, 196, 0.3);
+  filter: brightness(1.1);
+}
+
+.btn-outline-primary-liceo {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary-liceo:hover {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-colored);
+}
 
 /* Topbar */
 .topbar a{ color:#fff; text-decoration:none; }
