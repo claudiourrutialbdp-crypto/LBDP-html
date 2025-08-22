@@ -478,9 +478,29 @@
   }
 
   const savedLang = localStorage.getItem('lang') || 'es';
-  const langSelect = document.getElementById('langSelect');
-  langSelect.value = savedLang; applyI18n(savedLang);
-  langSelect.addEventListener('change', (e)=>{ localStorage.setItem('lang', e.target.value); applyI18n(e.target.value); });
+  
+  // Update current language display
+  function updateCurrentLang(lang) {
+    const currentLangSpan = document.getElementById('currentLang');
+    if (currentLangSpan) {
+      currentLangSpan.textContent = lang === 'es' ? 'ES - Español' : 'EN - English';
+    }
+  }
+  
+  // Initialize language
+  updateCurrentLang(savedLang);
+  applyI18n(savedLang);
+  
+  // Handle language selector clicks
+  document.querySelectorAll('[data-lang]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = e.target.getAttribute('data-lang');
+      localStorage.setItem('lang', lang);
+      updateCurrentLang(lang);
+      applyI18n(lang);
+    });
+  });
 
   // Año en footer
   document.getElementById('year').textContent = new Date().getFullYear();
