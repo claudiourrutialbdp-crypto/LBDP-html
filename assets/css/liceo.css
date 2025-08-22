@@ -40,7 +40,29 @@
 
 html { scroll-behavior: smooth; }
 
-body{ font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:#fff; }
+body{ 
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; 
+  color:var(--text); 
+  background:#fff; 
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilidades de texto mejoradas */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-aqua {
+  background: var(--gradient-aqua);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .bg-primary-liceo{ background: var(--primary) !important; }
 .text-primary-liceo{ color: var(--primary) !important; }
