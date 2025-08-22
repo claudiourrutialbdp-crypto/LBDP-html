@@ -117,9 +117,62 @@ body{
 .hero-gradient{ position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.05) 60%, rgba(0,0,0,0) 100%); pointer-events:none; }
 .parallax-img{ will-change: transform; transition: transform .2s ease-out; }
 
-/* Cards movement */
-.card-hover{ transition: transform .25s ease, box-shadow .25s ease; }
-.card-hover:hover{ transform: translateY(-4px); box-shadow: 0 12px 28px rgba(16,24,40,.12); }
+/* Cards mejoradas con gradientes y efectos */
+.card-hover{ 
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); 
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: var(--shadow-sm);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.card-hover:hover{ 
+  transform: translateY(-6px) scale(1.02); 
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(20, 24, 196, 0.1);
+}
+
+.card-feature {
+  background: var(--gradient-soft);
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card-feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.card-feature:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-colored);
+}
+
+.card-icon-aqua {
+  background: var(--gradient-aqua);
+  box-shadow: 0 8px 24px rgba(23, 226, 201, 0.3);
+}
 
 /* Reveal on scroll */
 .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
