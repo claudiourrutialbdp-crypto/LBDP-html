@@ -93,6 +93,129 @@ body{
   background: var(--gradient-primary);
   color: white;
   transform: translateY(-1px);
+/* Optimizaciones móviles mejoradas */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-hover {
+    margin-bottom: 1rem;
+  }
+  
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+  
+  /* Navegación móvil mejorada */
+  .navbar-nav {
+    padding: 1rem 0;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+  }
+  
+  .nav-link:hover {
+    background: rgba(20, 24, 196, 0.1);
+  }
+  
+  /* Formularios móviles */
+  .form-control, .form-select {
+    font-size: 16px; /* Evita zoom en iOS */
+    padding: 0.875rem 1rem;
+  }
+  
+  /* Botones móviles */
+  .btn {
+    min-height: 44px; /* Touch target mínimo */
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Espaciado móvil */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  section {
+    padding: 2rem 0 !important;
+  }
+}
+
+/* Animaciones mejoradas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Mejoras en accesibilidad */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Loading states */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
   box-shadow: var(--shadow-colored);
 }
 
