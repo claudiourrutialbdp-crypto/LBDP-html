@@ -32,61 +32,98 @@
     </div>
   </div>
 
-  <!-- Navbar (esquema nuevo) -->
+  <!-- Navbar mejorada con mejor UX móvil -->
   <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html" aria-label="Inicio">
         <span class="rounded" style="width:32px;height:32px;background:var(--aqua);display:inline-block"></span>
         <strong id="brandName">Liceo</strong>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
+      
+      <!-- Mobile menu button mejorado -->
+      <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Abrir menú">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarMain">
+        <!-- Mobile close button -->
+        <div class="d-lg-none d-flex justify-content-between align-items-center p-3 border-bottom mb-2">
+          <span class="fw-semibold text-primary">Menú de Navegación</span>
+          <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-label="Cerrar menú"></button>
+        </div>
+        
         <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navList">
           <li class="nav-item"><a class="nav-link active" href="./index.html">Inicio</a></li>
 
           <!-- Institución (mega) -->
           <li class="nav-item dropdown position-static">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Institución</a>
-            <div class="dropdown-menu dropdown-mega p-3 shadow">
-              <div class="row g-4">
-                <div class="col-12 col-sm-6">
-                  <div class="col-title">Conócenos</div>
-                  <a href="./nosotros-historia.html">Historia</a>
-                  <a href="./nosotros-mision.html">Misión</a>
-                  <a href="./nosotros-vision.html">Visión</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="i18nInstitution">Institución</a>
+            <div class="dropdown-menu dropdown-mega shadow-lg border-0 p-4">
+              <div class="row">
+                <div class="col-lg-3 mb-3">
+                  <div class="col-title">Nuestra Historia</div>
+                  <a href="./nosotros-historia.html">Historia del Liceo</a>
+                  <a href="./nosotros-mision.html">Misión y Visión</a>
                 </div>
-                <div class="col-12 col-sm-6">
+                <div class="col-lg-3 mb-3">
                   <div class="col-title">Comunidad</div>
                   <a href="./nosotros-comunidad.html">Comunidad Educativa</a>
-                  <a href="./nosotros-pme.html">PME</a>
+                  <a href="./nosotros-pme.html">Plan de Mejoramiento</a>
                 </div>
               </div>
             </div>
           </li>
 
           <!-- Vida Escolar -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Vida Escolar</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./calendario-actividades.html">Calendario de Actividades</a></li>
-              <li><a class="dropdown-item" href="./calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
-              <li><a class="dropdown-item" href="./uniforme.html">Uniforme Escolar</a></li>
-              <li><a class="dropdown-item" href="./talleres.html">Talleres Extraescolares</a></li>
-            </ul>
+          <li class="nav-item dropdown position-static">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="i18nSchoolLife">Vida Escolar</a>
+            <div class="dropdown-menu dropdown-mega shadow-lg border-0 p-4">
+              <div class="row">
+                <div class="col-lg-3 mb-3">
+                  <div class="col-title">Académico</div>
+                  <a href="./oferta.html">Oferta Educativa</a>
+                  <a href="./calendario-evaluaciones.html">Calendario Evaluaciones</a>
+                </div>
+                <div class="col-lg-3 mb-3">
+                  <div class="col-title">Actividades</div>
+                  <a href="./calendario-actividades.html">Calendario de Actividades</a>
+                  <a href="./talleres.html">Talleres Extraescolares</a>
+                </div>
+              </div>
+            </div>
           </li>
 
-          <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="./documentos.html">Documentos</a></li>
-          <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="./noticias.html" id="i18nNews">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="./documentos.html" id="i18nDocuments">Documentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contacto.html" id="i18nContact">Contacto</a></li>
         </ul>
-        <div class="d-flex align-items-center gap-2">
-          <select class="form-select form-select-sm" id="langSelect" style="width:120px" aria-label="Selector de idioma">
-            <option value="es" selected>ES - Español</option>
-            <option value="en">EN - English</option>
-          </select>
-          <a class="btn btn-primary-liceo btn-sm" href="./admision.html">Admisión</a>
+
+        <!-- Language selector mejorado -->
+        <div class="navbar-nav">
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="langSelector">
+              <i class="bi bi-globe2 small"></i>
+              <span id="currentLang">ES - Español</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" data-lang="es">🇪🇸 Español</a></li>
+              <li><a class="dropdown-item" href="#" data-lang="en">🇺🇸 English</a></li>
+            </ul>
+          </div>
+          
+          <!-- CTA button -->
+          <div class="nav-item ms-2 d-none d-lg-block">
+            <a href="./admision.html" class="btn btn-primary-liceo btn-sm">
+              <i class="bi bi-person-plus me-1"></i>Postula Aquí
+            </a>
+          </div>
+          
+          <!-- Mobile CTA -->
+          <div class="nav-item d-lg-none mt-3 mb-2">
+            <a href="./admision.html" class="btn btn-primary-liceo w-100">
+              <i class="bi bi-person-plus me-2"></i>Proceso de Admisión
+            </a>
+          </div>
         </div>
       </div>
     </div>
