@@ -477,6 +477,19 @@
     document.getElementById('mPinLabel').textContent = d.pin;
     document.getElementById('mAddBtn').textContent = d.add;
     document.querySelector('#muralFilter option[value="all"]').textContent = d.all;
+    
+    // Update navbar elements
+    const institutionEl = document.getElementById('i18nInstitution');
+    const schoolLifeEl = document.getElementById('i18nSchoolLife');
+    const newsEl = document.getElementById('i18nNews');
+    const documentsEl = document.getElementById('i18nDocuments');
+    const contactEl = document.getElementById('i18nContact');
+    
+    if (institutionEl) institutionEl.textContent = d.institution;
+    if (schoolLifeEl) schoolLifeEl.textContent = d.schoolLife;
+    if (newsEl) newsEl.textContent = d.news;
+    if (documentsEl) documentsEl.textContent = d.documents;
+    if (contactEl) contactEl.textContent = d.contact;
   }
 
   const savedLang = localStorage.getItem('lang') || 'es';
