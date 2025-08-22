@@ -9,14 +9,33 @@
 
 :root{
   --primary:#1418c4; /* institucional */
+  --primary-light:#2d3ed8;
+  --primary-dark:#0d1299;
   --aqua:#17e2c9;
+  --aqua-light:#2ee7d0;
   --gray:#b3b3cc;
   --green:#05dc79;
   --soft:#ecf1f5;
+  --soft-light:#f8fafc;
   --danger:#ed1614;
   --amber:#f0aa0f;
   --darkgreen:#168c47;
   --text:#111318;
+  --text-light:#475569;
+  --text-muted:#64748b;
+  
+  /* Gradientes mejorados */
+  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  --gradient-aqua: linear-gradient(135deg, var(--aqua) 0%, var(--aqua-light) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--aqua) 100%);
+  --gradient-soft: linear-gradient(135deg, var(--soft) 0%, var(--soft-light) 100%);
+  
+  /* Sombras mejoradas */
+  --shadow-sm: 0 2px 4px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 8px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 8px 16px rgba(16, 24, 40, 0.12);
+  --shadow-xl: 0 16px 32px rgba(16, 24, 40, 0.16);
+  --shadow-colored: 0 8px 24px rgba(20, 24, 196, 0.2);
 }
 
 html { scroll-behavior: smooth; }
