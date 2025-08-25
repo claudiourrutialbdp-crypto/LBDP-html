@@ -98,21 +98,9 @@
           <li class="nav-item"><a class="nav-link" href="./contacto.html" id="i18nContact">Contacto</a></li>
         </ul>
 
-        <!-- Language selector mejorado -->
+        <!-- CTA button -->
         <div class="navbar-nav">
-          <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown" aria-expanded="false" id="langSelector">
-              <i class="bi bi-globe2 small"></i>
-              <span id="currentLang">ES - Español</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#" data-lang="es">🇪🇸 Español</a></li>
-              <li><a class="dropdown-item" href="#" data-lang="en">🇺🇸 English</a></li>
-            </ul>
-          </div>
-          
-          <!-- CTA button -->
-          <div class="nav-item ms-2 d-none d-lg-block">
+          <div class="nav-item d-none d-lg-block">
             <a href="./admision.html" class="btn btn-primary-liceo btn-sm">
               <i class="bi bi-person-plus me-1"></i>Postula Aquí
             </a>
@@ -149,7 +137,7 @@
       <div class="container position-absolute top-50 start-50 translate-middle hero-content text-center">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h1 class="hero-title reveal">
+            <h1 class="hero-title reveal typing-animation">
               Bienvenidos al <span class="text-gradient-aqua">Liceo</span>
             </h1>
             <p class="hero-subtitle reveal">
@@ -395,37 +383,103 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer moderno y elegante -->
   <footer class="footer mt-5 py-5">
     <div class="container">
       <div class="row g-4">
-        <div class="col-md-4">
-          <h3 class="h6 text-white mb-3" id="footMap">Mapa del Sitio</h3>
-          <ul class="list-unstyled small">
-            <li><a id="footInicio" href="./index.html">Inicio</a></li>
-            <li><a id="footNoticias" href="./noticias.html">Noticias</a></li>
-            <li><a id="footDocumentos" href="./documentos.html">Documentos</a></li>
-            <li><a id="footContacto" href="./contacto.html">Contacto</a></li>
+        <!-- Mapa del Sitio -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-section-title">Mapa del Sitio</h3>
+          <ul class="list-unstyled">
+            <li><a href="./index.html" class="footer-link">Inicio</a></li>
+            <li><a href="./nosotros-historia.html" class="footer-link">Nuestra Historia</a></li>
+            <li><a href="./nosotros-mision.html" class="footer-link">Misión y Visión</a></li>
+            <li><a href="./oferta.html" class="footer-link">Oferta Educativa</a></li>
+            <li><a href="./noticias.html" class="footer-link">Noticias</a></li>
+            <li><a href="./documentos.html" class="footer-link">Documentos</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h3 class="h6 text-white mb-3" id="footContact">Datos de Contacto</h3>
-          <ul class="list-unstyled small">
-            <li><i class="bi bi-envelope"></i> contacto@liceo.edu.cl</li>
-            <li><i class="bi bi-telephone"></i> +56 2 2345 6789</li>
-            <li>Av. Educativa 1234, Santiago, Chile</li>
+        
+        <!-- Vida Escolar -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-section-title">Vida Escolar</h3>
+          <ul class="list-unstyled">
+            <li><a href="./calendario-actividades.html" class="footer-link">Calendario de Actividades</a></li>
+            <li><a href="./calendario-evaluaciones.html" class="footer-link">Evaluaciones</a></li>
+            <li><a href="./talleres.html" class="footer-link">Talleres Extraescolares</a></li>
+            <li><a href="./uniforme.html" class="footer-link">Uniforme Escolar</a></li>
+            <li><a href="./admision.html" class="footer-link">Proceso de Admisión</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h3 class="h6 text-white mb-3">Redes</h3>
-          <div class="d-flex gap-2">
-            <a href="#" aria-label="Facebook" class="social-link"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram" class="social-link"><i class="bi bi-instagram"></i></a>
+        
+        <!-- Contacto -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-section-title">Contacto</h3>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:contacto@liceo.edu.cl" class="footer-link">contacto@liceo.edu.cl</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+56223456789" class="footer-link">+56 2 2345 6789</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Av. Educativa 1234, Santiago, Chile</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-clock"></i>
+            <span>Lun - Vie: 8:00 - 18:00 hrs</span>
+          </div>
+        </div>
+        
+        <!-- Redes Sociales -->
+        <div class="col-lg-3 col-md-6">
+          <h3 class="footer-section-title">Síguenos</h3>
+          <p class="text-muted mb-3">Mantente conectado con nuestra comunidad educativa</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="footer-social-link">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" aria-label="Twitter" class="footer-social-link">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="footer-social-link">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="mt-4">
+            <h4 class="footer-section-title h6">Newsletter</h4>
+            <div class="d-flex">
+              <input type="email" class="form-control form-control-sm me-2" placeholder="Tu email">
+              <button class="btn btn-primary-liceo btn-sm">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <hr class="border-secondary opacity-25 my-4">
-      <div class="small text-secondary">© <span id="year"></span> Liceo. <span id="rightsText">Todos los derechos reservados.</span></div>
+      
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">© <span id="year"></span> Liceo. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="d-inline-flex gap-3">
+              <a href="#" class="small">Términos y Condiciones</a>
+              <a href="#" class="small">Política de Privacidad</a>
+              <a href="#" class="small">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -433,112 +487,74 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  // ------- Datos mock para últimas noticias ---------
-  const NEWS = [
-    {id:'n1', title:'Inicio de Clases 2025', date:'2025-03-04', category:'Comunicados', excerpt:'Bienvenida a toda la comunidad educativa al nuevo año escolar 2025.', images:['https://images.pexels.com/photos/33415773/pexels-photo-33415773.jpeg','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']},
-    {id:'n2', title:'Feria de Ciencias Regional', date:'2025-05-18', category:'Eventos', excerpt:'Participa de la feria con proyectos innovadores y trabajos colaborativos.', images:['https://images.unsplash.com/photo-1498243691581-b145c3f54a5a','https://images.unsplash.com/photo-1536985576470-b7e4a0363a19']},
-    {id:'n3', title:'Taller de Lectura Crítica', date:'2025-06-10', category:'Académico', excerpt:'Nuevo taller de habilidades lectoras disponible para 1º a 4º medio.', images:['https://images.unsplash.com/photo-1524995997946-a1c2e315a42f','https://images.pexels.com/photos/7929418/pexels-photo-7929418.jpeg']},
-    {id:'n4', title:'Campeonato Deportivo Escolar', date:'2025-04-22', category:'Eventos', excerpt:'Inscripciones abiertas para selecciones deportivas.', images:['https://images.unsplash.com/photo-1702737832079-ed5864397f92','https://images.unsplash.com/photo-1728500704191-af0407c47035']},
-    {id:'n5', title:'Entrega de Informes de Notas', date:'2025-07-01', category:'Comunicados', excerpt:'Publicación de evaluaciones del primer semestre en plataforma.', images:['https://images.unsplash.com/photo-1536985576470-b7e4a0363a19','https://images.pexels.com/photos/33415745/pexels-photo-33415745.jpeg']},
-    {id:'n6', title:'Biblioteca: Nuevas Adquisiciones', date:'2025-07-10', category:'Académico', excerpt:'Se incorporan nuevos títulos a la colección.', images:['https://images.unsplash.com/photo-1498243691581-b145c3f54a5a','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']},
-  ];
+  // ------- Cargar datos desde JSON ---------
+  let NEWS = [];
+  let MURAL_NOTES = [];
 
-  // ------- I18N sencillo ---------
-  const I18N = {
-    es: {
-      quick:'Accesos Rápidos', latest:'Últimas Noticias', seeMore:'Ver más', sitemap:'Mapa del Sitio', contactData:'Datos de Contacto', rights:'Todos los derechos reservados.', backTop:'Ir arriba',
-      muralTitle:'Diario Mural Digital', cat:'Categoría:', title:'Título', body:'Mensaje', add:'Agregar', pin:'Fijar', all:'Todos',
-      institution:'Institución', schoolLife:'Vida Escolar', news:'Noticias', documents:'Documentos', contact:'Contacto'
-    },
-    en: {
-      quick:'Quick Links', latest:'Latest News', seeMore:'See more', sitemap:'Sitemap', contactData:'Contact Info', rights:'All rights reserved.', backTop:'Go to top',
-      muralTitle:'Digital Bulletin Board', cat:'Category:', title:'Title', body:'Message', add:'Add', pin:'Pin', all:'All',
-      institution:'Institution', schoolLife:'School Life', news:'News', documents:'Documents', contact:'Contact'
-    }
-  };
-  function applyI18n(lang){
-    const d = I18N[lang] || I18N.es;
-    document.getElementById('i18nQuick').textContent = d.quick;
-    document.getElementById('i18nLatest').textContent = d.latest;
-    document.getElementById('i18nSeeMore1').textContent = d.seeMore;
-    document.getElementById('i18nSeeMore2').textContent = d.seeMore;
-    document.getElementById('i18nSeeMore3').textContent = d.seeMore;
-    document.getElementById('footMap').textContent = d.sitemap;
-    document.getElementById('footContact').textContent = d.contactData;
-    document.getElementById('rightsText').textContent = d.rights;
-    document.getElementById('backTop').setAttribute('title', d.backTop);
-    document.getElementById('backTop').setAttribute('aria-label', d.backTop);
-
-    document.getElementById('muralTitle').textContent = d.muralTitle;
-    document.getElementById('muralFilterLabel').textContent = d.cat;
-    document.getElementById('mTitleLabel').textContent = d.title;
-    document.getElementById('mBodyLabel').textContent = d.body;
-    document.getElementById('mCatLabel').textContent = d.cat;
-    document.getElementById('mPinLabel').textContent = d.pin;
-    document.getElementById('mAddBtn').textContent = d.add;
-    document.querySelector('#muralFilter option[value="all"]').textContent = d.all;
-    
-    // Update navbar elements
-    const institutionEl = document.getElementById('i18nInstitution');
-    const schoolLifeEl = document.getElementById('i18nSchoolLife');
-    const newsEl = document.getElementById('i18nNews');
-    const documentsEl = document.getElementById('i18nDocuments');
-    const contactEl = document.getElementById('i18nContact');
-    
-    if (institutionEl) institutionEl.textContent = d.institution;
-    if (schoolLifeEl) schoolLifeEl.textContent = d.schoolLife;
-    if (newsEl) newsEl.textContent = d.news;
-    if (documentsEl) documentsEl.textContent = d.documents;
-    if (contactEl) contactEl.textContent = d.contact;
-  }
-
-  const savedLang = localStorage.getItem('lang') || 'es';
-  
-  // Update current language display
-  function updateCurrentLang(lang) {
-    const currentLangSpan = document.getElementById('currentLang');
-    if (currentLangSpan) {
-      currentLangSpan.textContent = lang === 'es' ? 'ES - Español' : 'EN - English';
+  // Cargar noticias desde JSON
+  async function loadNews() {
+    try {
+      const response = await fetch('./data/news.json');
+      NEWS = await response.json();
+      renderLatestNews();
+    } catch (error) {
+      console.error('Error cargando noticias:', error);
+      // Fallback a datos por defecto
+      NEWS = [
+        {id:'n1', title:'Inicio de Clases 2025', date:'2025-03-04', category:'Comunicados', excerpt:'Bienvenida al año escolar 2025.', images:['https://images.pexels.com/photos/33415773/pexels-photo-33415773.jpeg','https://images.unsplash.com/photo-1524995997946-a1c2e315a42f']},
+      ];
+      renderLatestNews();
     }
   }
-  
-  // Initialize language
-  updateCurrentLang(savedLang);
-  applyI18n(savedLang);
-  
-  // Handle language selector clicks
-  document.querySelectorAll('[data-lang]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const lang = e.target.getAttribute('data-lang');
-      localStorage.setItem('lang', lang);
-      updateCurrentLang(lang);
-      applyI18n(lang);
-    });
-  });
+
+  // Cargar datos del mural desde JSON
+  async function loadMuralData() {
+    try {
+      const response = await fetch('./data/mural.json');
+      MURAL_NOTES = await response.json();
+    } catch (error) {
+      console.error('Error cargando datos del mural:', error);
+      // Fallback a datos por defecto
+      MURAL_NOTES = [
+        { id:'a1', title:'Reunión de Apoderados', body:'Jueves 19:00 en sala de clases.', cat:'Comunicados', pinned:true, createdAt:'2025-07-01T10:00:00Z' },
+      ];
+    }
+    // Combinar con datos locales existentes
+    const localNotes = JSON.parse(localStorage.getItem(MURAL_KEY) || '[]');
+    const combinedNotes = [...MURAL_NOTES, ...localNotes.filter(note => !MURAL_NOTES.some(n => n.id === note.id))];
+    localStorage.setItem(MURAL_KEY, JSON.stringify(combinedNotes));
+    renderNotes();
+  }
 
   // Año en footer
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Render últimas 5 noticias + stagger reveal
-  const latest = [...NEWS].sort((a,b)=>a.date<b.date?1:-1).slice(0,5);
-  const latestContainer = document.getElementById('latestNews');
-  latest.forEach((n, idx) => {
-    const col = document.createElement('div');
-    col.className = 'col-12 col-sm-6 col-lg-4 col-xxl-3 reveal';
-    col.style.transitionDelay = `${idx*60}ms`;
-    col.innerHTML = `
-      <article class=\"card h-100 card-hover\" role=\"article\">
-        <img class=\"thumb\" src=\"${n.images[0]}\" alt=\"${n.title}\">
-        <div class=\"card-body\">
-          <p class=\"text-muted small mb-1\">${new Date(n.date).toLocaleDateString()}</p>
-          <h3 class=\"h6\">${n.title}</h3>
-          <p class=\"small text-secondary\">${n.excerpt}</p>
-          <a href=\"./noticias.html#${n.id}\" class=\"link-success\">Ver detalle</a>
-        </div>
-      </article>`;
-    latestContainer.appendChild(col);
-  });
+  function renderLatestNews() {
+    const latest = [...NEWS].sort((a,b)=>a.date<b.date?1:-1).slice(0,5);
+    const latestContainer = document.getElementById('latestNews');
+    latestContainer.innerHTML = '';
+    
+    latest.forEach((n, idx) => {
+      const col = document.createElement('div');
+      col.className = 'col-12 col-sm-6 col-lg-4 col-xxl-3 reveal';
+      col.style.transitionDelay = `${idx*60}ms`;
+      col.innerHTML = `
+        <article class="card h-100 card-hover" role="article">
+          <img class="thumb" src="${n.images[0]}" alt="${n.title}">
+          <div class="card-body">
+            <p class="text-muted small mb-1">${new Date(n.date).toLocaleDateString()}</p>
+            <h3 class="h6">${n.title}</h3>
+            <p class="small text-secondary">${n.excerpt}</p>
+            <a href="./noticias.html#${n.id}" class="link-success">Ver detalle</a>
+          </div>
+        </article>`;
+      latestContainer.appendChild(col);
+    });
+    
+    // Re-aplicar observer a nuevos elementos
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
 
   // Intersección para revelar
   const io = new IntersectionObserver((entries)=>{
@@ -567,19 +583,11 @@
   }
   updateParallax();
 
-  // --------- Diario Mural (localStorage) ----------
+  // --------- Diario Mural (localStorage + JSON) ----------
   const MURAL_KEY = 'mural_notes_v1';
   const muralGrid = document.getElementById('muralGrid');
   const muralFilter = document.getElementById('muralFilter');
   const form = document.getElementById('muralForm');
-
-  const seed = [
-    { id:'a1', title:'Reunión de Apoderados', body:'Jueves 19:00 en sala de clases.', cat:'Comunicados', pinned:true, createdAt:'2025-07-01T10:00:00Z' },
-    { id:'a2', title:'Ensayo PSU', body:'Simulacro este sábado 09:00.', cat:'Académico', pinned:false, createdAt:'2025-07-02T12:00:00Z' },
-    { id:'a3', title:'Campeonato Inter-Escolar', body:'Inscripciones abiertas hasta el viernes.', cat:'Eventos', pinned:false, createdAt:'2025-07-03T09:00:00Z' },
-    { id:'a4', title:'Traer delantal para laboratorio', body:'Actividad práctica de química.', cat:'Recordatorio', pinned:false, createdAt:'2025-07-04T08:00:00Z' }
-  ];
-  if(!localStorage.getItem(MURAL_KEY)) localStorage.setItem(MURAL_KEY, JSON.stringify(seed));
 
   function loadNotes(){
     return JSON.parse(localStorage.getItem(MURAL_KEY)||'[]');
@@ -597,19 +605,19 @@
       const div = document.createElement('div');
       const rot = ((idx%5)-2)*0.6; // pequeña variación
       div.innerHTML = `
-        <article class=\"note ${n.pinned?'note-pinned':''} reveal\" style=\"--r:${rot}deg\" aria-label=\"${n.title}\">
-          <div class=\"d-flex align-items-center justify-content-between\">
+        <article class="note ${n.pinned?'note-pinned':''} reveal" style="--r:${rot}deg" aria-label="${n.title}">
+          <div class="d-flex align-items-center justify-content-between">
             <div>
-              <span class=\"badge bg-warning-subtle text-dark border\">${n.cat}</span>
-              ${n.pinned?'<span class=\"badge bg-info-subtle text-dark border\"><i class=\"bi bi-pin-angle\"></i> Pin</span>':''}
+              <span class="badge bg-warning-subtle text-dark border">${n.cat}</span>
+              ${n.pinned?'<span class="badge bg-info-subtle text-dark border"><i class="bi bi-pin-angle"></i> Pin</span>':''}
             </div>
-            <small class=\"text-muted\">${new Date(n.createdAt).toLocaleDateString()}</small>
+            <small class="text-muted">${new Date(n.createdAt).toLocaleDateString()}</small>
           </div>
-          <h3 class=\"h6 mt-1 mb-1\">${n.title}</h3>
-          <p class=\"small mb-2\">${n.body}</p>
-          <div class=\"d-flex gap-2\">
-            <button class=\"btn btn-sm btn-outline-secondary\" aria-label=\"Fijar\" data-act=\"pin\" data-id=\"${n.id}\"><i class=\"bi bi-pin-angle\"></i></button>
-            <button class=\"btn btn-sm btn-outline-danger\" aria-label=\"Eliminar\" data-act=\"del\" data-id=\"${n.id}\"><i class=\"bi bi-trash\"></i></button>
+          <h3 class="h6 mt-1 mb-1">${n.title}</h3>
+          <p class="small mb-2">${n.body}</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-secondary" aria-label="Fijar" data-act="pin" data-id="${n.id}"><i class="bi bi-pin-angle"></i></button>
+            <button class="btn btn-sm btn-outline-danger" aria-label="Eliminar" data-act="del" data-id="${n.id}"><i class="bi bi-trash"></i></button>
           </div>
         </article>`;
       muralGrid.appendChild(div.firstElementChild);
@@ -641,7 +649,10 @@
     saveNotes(list); form.reset(); renderNotes();
   });
   muralFilter.addEventListener('change', renderNotes);
-  renderNotes();
+
+  // Inicializar datos
+  loadNews();
+  loadMuralData();
 
   </script>
 </body>
