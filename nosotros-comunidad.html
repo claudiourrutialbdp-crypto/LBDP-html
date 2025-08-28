@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Liceo - Comunidad Educativa</title>
-  <meta name="description" content="Comunidad educativa del Liceo: estamentos y participación.">
+  <meta name="description" content="Conoce a nuestra comunidad educativa: directivos, profesores, estudiantes, padres y personal de apoyo que hacen posible la formación integral de nuestros alumnos.">
   <meta property="og:title" content="Comunidad Educativa - Liceo">
-  <meta property="og:description" content="Conoce cómo se organiza nuestra comunidad educativa.">
+  <meta property="og:description" content="Conoce cómo se organiza nuestra comunidad educativa y quiénes la conforman.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1536985576470-b7e4a0363a19">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1580894732444-8ecded7900cd">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
   <link rel="mask-icon" href="./assets/img/safari-pinned-tab.svg" color="#1418c4">
@@ -18,77 +18,397 @@
   <link href="./assets/css/liceo.css" rel="stylesheet">
 </head>
 <body>
-  <div class="topbar bg-primary-liceo text-white py-1 small sticky-top" style="z-index:1060"><div class="container d-flex justify-content-between align-items-center"><div class="d-flex gap-3 align-items-center"><a href="mailto:contacto@liceo.edu.cl" class="d-inline-flex align-items-center gap-1"><i class="bi bi-envelope icon"></i><span>contacto@liceo.edu.cl</span></a><a href="tel:+56223456789" class="d-none d-sm-inline-flex align-items-center gap-1"><i class="bi bi-telephone icon"></i><span>+56 2 2345 6789</span></a></div><div class="d-flex gap-3"><a href="#" aria-label="Facebook" class="icon"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram" class="icon"><i class="bi bi-instagram"></i></a></div></div></div>
-  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2" href="./index.html"><span class="rounded" style="width:32px;height:32px;background:var(--aqua);display:inline-block"></span><strong>Liceo</strong></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarMain"><ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Nosotros</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="./nosotros-historia.html">Historia</a></li>
-        <li><a class="dropdown-item" href="./nosotros-mision.html">Misión</a></li>
-        <li><a class="dropdown-item" href="./nosotros-vision.html">Visión</a></li>
-        <li><a class="dropdown-item active" href="./nosotros-comunidad.html">Comunidad Educativa</a></li>
-        <li><a class="dropdown-item" href="./nosotros-pme.html">PME</a></li>
-      </ul>
-    </li>
-    <li class="nav-item"><a class="nav-link" href="./oferta.html">Oferta Educativa</a></li>
-    <li class="nav-item"><a class="nav-link" href="./calendario-actividades.html">Calendario de Actividades</a></li>
-    <li class="nav-item"><a class="nav-link" href="./calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
-    <li class="nav-item"><a class="nav-link" href="./uniforme.html">Uniforme Escolar</a></li>
-    <li class="nav-item"><a class="nav-link" href="./talleres.html">Talleres Extraescolares</a></li>
-    <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias y Comunicados</a></li>
-    <li class="nav-item"><a class="nav-link" href="./documentos.html">Documentos</a></li>
-    <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
-  </ul>
-  <select class="form-select form-select-sm" id="langSelect" style="width:120px"><option value="es">ES - Español</option><option value="en">EN - English</option></select>
-  </div></div></nav>
+  <!-- Topbar -->
+  <div id="topbar"></div>
+  
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
   <main class="container py-4">
-    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Inicio</a></li><li class="breadcrumb-item">Nosotros</li><li class="breadcrumb-item active" aria-current="page" id="bcCurrent">Comunidad Educativa</li></ol></nav>
-    <h1 class="h4" id="pageTitle">Comunidad Educativa</h1>
-    <p class="text-secondary" id="pageSub">Estructura de participación y estamentos del Liceo.</p>
-
-    <div class="row g-3 mt-2" id="grid">
-      
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li>
+        <li class="breadcrumb-item">Institución</li>
+        <li class="breadcrumb-item active" aria-current="page">Comunidad Educativa</li>
+      </ol>
+    </nav>
+    
+    <div class="text-center mb-5">
+      <h1 class="h3 text-gradient mb-3">Nuestra Comunidad Educativa</h1>
+      <p class="lead text-muted">Un equipo comprometido con la formación integral de nuestros estudiantes</p>
     </div>
+
+    <!-- Equipo Directivo -->
+    <section class="mb-5">
+      <h2 class="h4 text-primary-liceo mb-4">
+        <i class="bi bi-diagram-3 me-2"></i>Equipo Directivo
+      </h2>
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="card h-100 card-hover">
+            <div class="row g-0 h-100">
+              <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd" 
+                     class="img-fluid rounded-start h-100" 
+                     alt="Directora" 
+                     style="object-fit: cover;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="h5 text-primary-liceo">María Elena González</h3>
+                  <p class="text-muted mb-2"><strong>Directora</strong></p>
+                  <p class="small">Magíster en Educación con 15 años de experiencia en gestión educativa. Lidera nuestro proyecto institucional con visión de excelencia académica y formación valórica.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-light text-dark">Liderazgo Educativo</span>
+                    <span class="badge bg-light text-dark">Gestión</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 reveal">
+          <div class="card h-100 card-hover">
+            <div class="row g-0 h-100">
+              <div class="col-md-4">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754" 
+                     class="img-fluid rounded-start h-100" 
+                     alt="Subdirectora" 
+                     style="object-fit: cover;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="h5 text-primary-liceo">Carmen Rodríguez</h3>
+                  <p class="text-muted mb-2"><strong>Subdirectora Académica</strong></p>
+                  <p class="small">Profesora de Estado en Matemáticas, especialista en currículum y evaluación. Coordina los procesos académicos y el desarrollo profesional docente.</p>
+                  <div class="d-flex gap-2">
+                    <span class="badge bg-light text-dark">Currículum</span>
+                    <span class="badge bg-light text-dark">Evaluación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuerpo Docente -->
+    <section class="mb-5">
+      <h2 class="h4 text-primary-liceo mb-4">
+        <i class="bi bi-person-workspace me-2"></i>Cuerpo Docente
+      </h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="card h-100 card-feature text-center">
+            <div class="card-body p-4">
+              <div class="position-relative mb-3">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655" 
+                     class="rounded-circle mx-auto d-block" 
+                     alt="Jefe UTP" 
+                     style="width: 100px; height: 100px; object-fit: cover;">
+              </div>
+              <h3 class="h6 text-primary-liceo">Luis Morales</h3>
+              <p class="text-muted small mb-2">Jefe de Unidad Técnico Pedagógica</p>
+              <p class="small">Coordina la implementación curricular y supervisa las prácticas pedagógicas para asegurar la calidad educativa.</p>
+              <div class="mt-3">
+                <span class="badge bg-primary-liceo text-white">Pedagogía</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="card h-100 card-feature text-center">
+            <div class="card-body p-4">
+              <div class="position-relative mb-3">
+                <img src="https://images.unsplash.com/photo-1627423893729-3a79f48ff473" 
+                     class="rounded-circle mx-auto d-block" 
+                     alt="Orientadora" 
+                     style="width: 100px; height: 100px; object-fit: cover;">
+              </div>
+              <h3 class="h6 text-primary-liceo">Andrea Silva</h3>
+              <p class="text-muted small mb-2">Orientadora Educacional</p>
+              <p class="small">Acompaña el desarrollo personal y vocacional de los estudiantes, facilitando su crecimiento integral y proyecto de vida.</p>
+              <div class="mt-3">
+                <span class="badge bg-info text-white">Orientación</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="card h-100 card-feature text-center">
+            <div class="card-body p-4">
+              <div class="bg-primary-liceo text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width: 100px; height: 100px;">
+                <i class="bi bi-people" style="font-size: 2.5rem;"></i>
+              </div>
+              <h3 class="h6 text-primary-liceo">Equipo Docente</h3>
+              <p class="text-muted small mb-2">25 Profesionales de la Educación</p>
+              <p class="small">Profesores especialistas en diferentes áreas del conocimiento, comprometidos con la excelencia académica y formación valórica.</p>
+              <div class="mt-3">
+                <span class="badge bg-success text-white">Multidisciplinario</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estudiantes -->
+    <section class="mb-5">
+      <h2 class="h4 text-primary-liceo mb-4">
+        <i class="bi bi-people me-2"></i>Nuestros Estudiantes
+      </h2>
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="card card-feature">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1627423896085-e3e694d88e40" 
+                       class="img-fluid rounded" 
+                       alt="Estudiantes en clase"
+                       style="height: 120px; width: 100%; object-fit: cover;">
+                </div>
+                <div class="col-md-8">
+                  <h3 class="h5 text-primary-liceo">Centro de Estudiantes</h3>
+                  <p class="small mb-3">Organización estudiantil que promueve la participación, liderazgo y representación de los intereses de todos los alumnos del liceo.</p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-warning text-dark">Liderazgo</span>
+                    <span class="badge bg-warning text-dark">Participación</span>
+                    <span class="badge bg-warning text-dark">Representación</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="card card-feature">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1615489548358-46fca22506cd" 
+                       class="img-fluid rounded" 
+                       alt="Estudiantes"
+                       style="height: 120px; width: 100%; object-fit: cover;">
+                </div>
+                <div class="col-md-8">
+                  <h3 class="h5 text-primary-liceo">Matrícula Estudiantil</h3>
+                  <p class="small mb-3">Más de 500 estudiantes de 1º a 4º medio, provenientes de diferentes comunas, unidos por el compromiso con su formación académica y personal.</p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-success text-white">1º - 4º Medio</span>
+                    <span class="badge bg-success text-white">500+ Alumnos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Padres y Apoderados -->
+    <section class="mb-5">
+      <h2 class="h4 text-primary-liceo mb-4">
+        <i class="bi bi-people-fill me-2"></i>Padres y Apoderados
+      </h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6 reveal">
+          <div class="card card-feature h-100">
+            <div class="card-body p-4">
+              <h3 class="h5 text-primary-liceo mb-3">Centro General de Padres y Apoderados</h3>
+              <p class="mb-3">Organización que representa a las familias de nuestros estudiantes, promoviendo la participación activa en el proceso educativo y fortaleciendo la alianza familia-liceo.</p>
+              <ul class="list-unstyled small">
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Participación en decisiones institucionales</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Apoyo a actividades educativas</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Comunicación permanente con el establecimiento</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Desarrollo de actividades de integración</li>
+              </ul>
+              <div class="mt-3">
+                <a href="mailto:apoderados@liceo.edu.cl" class="btn btn-outline-primary-liceo btn-sm">
+                  <i class="bi bi-envelope me-1"></i>Contactar
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655" 
+               class="img-fluid rounded-4 shadow-lg" 
+               alt="Reunión de apoderados">
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal de Apoyo -->
+    <section class="mb-5">
+      <h2 class="h4 text-primary-liceo mb-4">
+        <i class="bi bi-person-gear me-2"></i>Personal de Apoyo
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-3 col-sm-6 reveal">
+          <div class="card text-center h-100 card-feature">
+            <div class="card-body p-3">
+              <div class="bg-info text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                <i class="bi bi-building" style="font-size: 1.5rem;"></i>
+              </div>
+              <h4 class="h6 mb-1">Administración</h4>
+              <p class="small text-muted">Gestión administrativa y financiera</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 reveal">
+          <div class="card text-center h-100 card-feature">
+            <div class="card-body p-3">
+              <div class="bg-success text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                <i class="bi bi-book" style="font-size: 1.5rem;"></i>
+              </div>
+              <h4 class="h6 mb-1">Biblioteca</h4>
+              <p class="small text-muted">Centro de recursos de aprendizaje</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 reveal">
+          <div class="card text-center h-100 card-feature">
+            <div class="card-body p-3">
+              <div class="bg-warning text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                <i class="bi bi-wrench" style="font-size: 1.5rem;"></i>
+              </div>
+              <h4 class="h6 mb-1">Mantenimiento</h4>
+              <p class="small text-muted">Cuidado de infraestructura</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 reveal">
+          <div class="card text-center h-100 card-feature">
+            <div class="card-body p-3">
+              <div class="bg-danger text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                <i class="bi bi-shield-check" style="font-size: 1.5rem;"></i>
+              </div>
+              <h4 class="h6 mb-1">Seguridad</h4>
+              <p class="small text-muted">Cuidado y protección</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Convivencia Escolar -->
+    <section class="mb-5">
+      <div class="card card-feature">
+        <div class="card-body p-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="h4 text-primary-liceo mb-3">
+                <i class="bi bi-chat-heart me-2"></i>Equipo de Convivencia Escolar
+              </h2>
+              <p class="mb-3">Nuestro equipo de convivencia escolar trabaja permanentemente para mantener un clima positivo de aprendizaje, promoviendo el respeto, la inclusión y la resolución pacífica de conflictos.</p>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-heart text-danger"></i>
+                    <span class="small">Bienestar estudiantil</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-peace text-success"></i>
+                    <span class="small">Mediación de conflictos</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-people text-info"></i>
+                    <span class="small">Inclusión y diversidad</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-umbrella text-warning"></i>
+                    <span class="small">Prevención del bullying</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 text-center">
+              <div class="bg-primary-liceo text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                <i class="bi bi-chat-heart" style="font-size: 3rem;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer mt-5 py-5"><div class="container small text-secondary">© <span id="year"></span> Liceo.</div></footer>
-  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba"><i class="bi bi-chevron-up"></i></button>
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const CARDS=[
-    ['Dirección','Equipo directivo y coordinación general.','bi-diagram-3'],
-    ['Consejo de Profesores','Docentes y jefaturas de curso.','bi-person-workspace'],
-    ['Centro de Estudiantes','Representación estudiantil y actividades.','bi-people'],
-    ['Centro de Padres','Participación de apoderados y tutores.','bi-people-fill'],
-    ['Asistentes de la Educación','Apoyo administrativo y de servicios.','bi-person-gear'],
-    ['Convivencia Escolar','Bienestar, mediación y clima escolar.','bi-chat-heart']
-  ];
-  const I18N={ es:{t:'Comunidad Educativa', sub:'Estructura de participación y estamentos del Liceo.', bc:'Comunidad Educativa', cards:[
-    ['Dirección','Equipo directivo y coordinación general.'],
-    ['Consejo de Profesores','Docentes y jefaturas de curso.'],
-    ['Centro de Estudiantes','Representación estudiantil y actividades.'],
-    ['Centro de Padres','Participación de apoderados y tutores.'],
-    ['Asistentes de la Educación','Apoyo administrativo y de servicios.'],
-    ['Convivencia Escolar','Bienestar, mediación y clima escolar.']
-  ]},
-  en:{t:'Educational Community', sub:'Participation structure and stakeholder groups.', bc:'Educational Community', cards:[
-    ['Principalship','Leadership team and general coordination.'],
-    ['Teachers Council','Teachers and homeroom leadership.'],
-    ['Student Council','Student representation and activities.'],
-    ['Parents Association','Parents/guardians participation.'],
-    ['Education Assistants','Administrative and service support.'],
-    ['School Coexistence','Well-being, mediation and school climate.']
-  ]} };
-  const sel=document.getElementById('langSelect'); const saved=localStorage.getItem('lang')||'es'; sel.value=saved; apply(saved);
-  sel.addEventListener('change',e=>{ localStorage.setItem('lang', e.target.value); apply(e.target.value); });
-  function apply(l){ const d=I18N[l]||I18N.es; pageTitle.textContent=d.t; pageSub.textContent=d.sub; bcCurrent.textContent=d.bc; const g=document.getElementById('grid'); g.innerHTML=''; d.cards.forEach((c,i)=>{ const col=document.createElement('div'); col.className='col-md-4 reveal'; col.style.transitionDelay=`${i*40}ms`; col.innerHTML=`<div class=\"card h-100 card-hover\"><div class=\"card-body\"><h3 class=\"h6\">${c[0]}</h3><p class=\"small text-secondary\">${c[1]}</p></div></div>`; g.appendChild(col); }); document.querySelectorAll('.reveal').forEach(el=>io.observe(el)); }
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const backTop=document.getElementById('backTop');
-  window.addEventListener('scroll',()=>{ backTop.classList.toggle('show', window.scrollY>240); document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12); });
-  backTop.addEventListener('click',()=> window.scrollTo({top:0, behavior:'smooth'}));
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.2});
+    // Cargar componentes
+    async function loadComponent(elementId, filePath) {
+      try {
+        const response = await fetch(filePath);
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
+      } catch (error) {
+        console.error(`Error cargando ${filePath}:`, error);
+      }
+    }
+
+    // Cargar todos los componentes
+    Promise.all([
+      loadComponent('topbar', './components/topbar.html'),
+      loadComponent('navbar', './components/navbar.html'),
+      loadComponent('footer', './components/footer.html')
+    ]).then(() => {
+      // Inicializar después de cargar componentes
+      initializePage();
+    });
+
+    function initializePage() {
+      // Año en footer
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      // Back to top
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar-liceo');
+        if (navbar) {
+          navbar.classList.toggle('navbar-elevated', window.scrollY > 12);
+        }
+        backTop.classList.toggle('show', window.scrollY > 240);
+      });
+      
+      backTop.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+
+      // Reveal animation
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, {threshold: 0.2});
+      
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
   </script>
 </body>
 </html>

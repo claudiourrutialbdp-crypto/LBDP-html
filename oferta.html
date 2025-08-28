@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Liceo - Oferta Educativa</title>
-  <meta name="description" content="Oferta educativa del Liceo: planes y programas.">
+  <meta name="description" content="Descubre nuestra oferta educativa: Formación Científico-Humanista y especialidades técnicas en Hotelería, Gráfica y Telecomunicaciones.">
   <meta property="og:title" content="Oferta Educativa - Liceo">
-  <meta property="og:description" content="Programas formativos y trayectorias de aprendizaje.">
+  <meta property="og:description" content="Formación integral con especialidades técnicas y científico-humanista.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a">
   <meta name="twitter:card" content="summary_large_image">
@@ -18,89 +18,395 @@
   <link href="./assets/css/liceo.css" rel="stylesheet">
 </head>
 <body>
-  <div class="topbar bg-primary-liceo text-white py-1 small sticky-top" style="z-index:1060"><div class="container d-flex justify-content-between align-items-center"><div class="d-flex gap-3 align-items-center"><a href="mailto:contacto@liceo.edu.cl" class="d-inline-flex align-items-center gap-1"><i class="bi bi-envelope icon"></i><span>contacto@liceo.edu.cl</span></a><a href="tel:+56223456789" class="d-none d-sm-inline-flex align-items-center gap-1"><i class="bi bi-telephone icon"></i><span>+56 2 2345 6789</span></a></div><div class="d-flex gap-3"><a href="#" aria-label="Facebook" class="icon"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram" class="icon"><i class="bi bi-instagram"></i></a></div></div></div>
-  <nav class="navbar navbar-expand-lg bg-white sticky-top navbar-liceo" aria-label="Principal">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html"><span class="rounded" style="width:32px;height:32px;background:var(--aqua);display:inline-block"></span><strong>Liceo</strong></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarMain">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Nosotros</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="./nosotros-historia.html">Historia</a></li>
-              <li><a class="dropdown-item" href="./nosotros-mision.html">Misión</a></li>
-              <li><a class="dropdown-item" href="./nosotros-vision.html">Visión</a></li>
-              <li><a class="dropdown-item" href="./nosotros-comunidad.html">Comunidad Educativa</a></li>
-              <li><a class="dropdown-item" href="./nosotros-pme.html">PME</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link active" href="./oferta.html">Oferta Educativa</a></li>
-          <li class="nav-item"><a class="nav-link" href="./calendario-actividades.html">Calendario de Actividades</a></li>
-          <li class="nav-item"><a class="nav-link" href="./calendario-evaluaciones.html">Calendario de Evaluaciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="./uniforme.html">Uniforme Escolar</a></li>
-          <li class="nav-item"><a class="nav-link" href="./talleres.html">Talleres Extraescolares</a></li>
-          <li class="nav-item"><a class="nav-link" href="./noticias.html">Noticias y Comunicados</a></li>
-          <li class="nav-item"><a class="nav-link" href="./documentos.html">Documentos</a></li>
-          <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
-        </ul>
-        <select class="form-select form-select-sm" id="langSelect" style="width:120px"><option value="es">ES - Español</option><option value="en">EN - English</option></select>
-      </div>
-    </div>
-  </nav>
+  <!-- Topbar -->
+  <div id="topbar"></div>
+  
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
   <main class="container py-4">
-    <nav aria-label="breadcrumb" class="mb-3"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Inicio</a></li><li class="breadcrumb-item active" aria-current="page" id="bcCurrent">Oferta Educativa</li></ol></nav>
-    <h1 class="h4" id="title">Oferta Educativa</h1>
-    <p class="text-secondary" id="subtitle">Programas formativos y trayectorias de aprendizaje.</p>
-
-    <div class="row g-3 mt-2">
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-mortarboard text-primary-liceo"></i><h3 class="h6 m-0" id="opt1">Enseñanza Media Científico-Humanista</h3></div>
-        <p class="small text-secondary" id="opt1d">Plan común con electivos de profundización.</p>
-      </div></div></div>
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-cpu text-primary-liceo"></i><h3 class="h6 m-0" id="opt2">Tecnología y Programación</h3></div>
-        <p class="small text-secondary" id="opt2d">Talleres y módulos de pensamiento computacional.</p>
-      </div></div></div>
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-people text-primary-liceo"></i><h3 class="h6 m-0" id="opt3">Formación Ciudadana</h3></div>
-        <p class="small text-secondary" id="opt3d">Convivencia, liderazgo y participación.</p>
-      </div></div></div>
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-book text-primary-liceo"></i><h3 class="h6 m-0" id="opt4">Plan de Lectura</h3></div>
-        <p class="small text-secondary" id="opt4d">Fomento lector y habilidades comunicativas.</p>
-      </div></div></div>
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-flask text-primary-liceo"></i><h3 class="h6 m-0" id="opt5">Ciencias</h3></div>
-        <p class="small text-secondary" id="opt5d">Laboratorios y proyectos experimentales.</p>
-      </div></div></div>
-      <div class="col-md-4 reveal"><div class="card h-100 card-hover"><div class="card-body">
-        <div class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-translate text-primary-liceo"></i><h3 class="h6 m-0" id="opt6">Idiomas</h3></div>
-        <p class="small text-secondary" id="opt6d">Inglés y talleres comunicativos.</p>
-      </div></div></div>
+    <nav aria-label="breadcrumb" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Oferta Educativa</li>
+      </ol>
+    </nav>
+    
+    <div class="text-center mb-5">
+      <h1 class="h3 text-gradient mb-3">Nuestra Oferta Educativa</h1>
+      <p class="lead text-muted">Formación integral que prepara a nuestros estudiantes para el futuro</p>
     </div>
+
+    <!-- Formación Científico-Humanista -->
+    <section class="mb-5">
+      <div class="card card-feature">
+        <div class="card-body p-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="h4 text-primary-liceo mb-3">
+                <i class="bi bi-mortarboard me-2"></i>Enseñanza Media Científico-Humanista
+              </h2>
+              <p class="mb-3">Nuestro programa de formación científico-humanista ofrece una educación integral que prepara a los estudiantes para la educación superior y el desarrollo de competencias para la vida.</p>
+              
+              <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-book text-primary-liceo"></i>
+                    <span class="small">Plan común con electivos de profundización</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-graduation-cap text-primary-liceo"></i>
+                    <span class="small">Preparación PSU/PAES</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-globe text-primary-liceo"></i>
+                    <span class="small">Formación ciudadana y valórica</span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-lightbulb text-primary-liceo"></i>
+                    <span class="small">Desarrollo del pensamiento crítico</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="h6 text-primary-liceo mb-3">Áreas de Profundización:</h3>
+              <div class="row g-2">
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Ciencias Naturales</span>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Matemáticas</span>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Humanidades</span>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Artes y Música</span>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Educación Física</span>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <span class="badge bg-primary-liceo text-white w-100 p-2">Idioma Extranjero</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 text-center">
+              <div class="bg-primary-liceo text-white rounded-4 p-4">
+                <i class="bi bi-mortarboard" style="font-size: 4rem;"></i>
+                <h4 class="h5 mt-3 mb-2">1º a 4º Medio</h4>
+                <p class="small mb-0">Formación completa para la educación superior</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialidades Técnicas -->
+    <section class="mb-5">
+      <div class="text-center mb-4">
+        <h2 class="h4 text-primary-liceo mb-3">Especialidades Técnico-Profesionales</h2>
+        <p class="text-muted">Formación especializada que combina teoría y práctica para la inserción laboral</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Servicios de Hotelería -->
+        <div class="col-lg-4 reveal">
+          <div class="card h-100 card-feature">
+            <div class="card-header bg-primary-liceo text-white text-center py-3">
+              <i class="bi bi-building" style="font-size: 2.5rem;"></i>
+              <h3 class="h5 mt-2 mb-0">Servicios de Hotelería</h3>
+            </div>
+            <div class="card-body p-4">
+              <p class="small text-muted mb-3">Formación integral en gestión hotelera, atención al cliente y servicios turísticos.</p>
+              
+              <h4 class="h6 text-primary-liceo mb-3">Áreas de Formación:</h4>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Gestión de Alojamiento</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Servicios Gastronómicos</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Atención al Cliente</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Turismo y Recreación</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Administración Hotelera</li>
+              </ul>
+
+              <div class="mb-3">
+                <h4 class="h6 text-primary-liceo mb-2">Campo Laboral:</h4>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-light text-dark">Hoteles</span>
+                  <span class="badge bg-light text-dark">Restaurantes</span>
+                  <span class="badge bg-light text-dark">Turismo</span>
+                  <span class="badge bg-light text-dark">Eventos</span>
+                </div>
+              </div>
+
+              <div class="bg-light rounded p-3">
+                <small><strong>Duración:</strong> 3º y 4º Medio</small><br>
+                <small><strong>Práctica Profesional:</strong> 540 horas</small><br>
+                <small><strong>Título:</strong> Técnico de Nivel Medio en Servicios de Hotelería</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfica -->
+        <div class="col-lg-4 reveal">
+          <div class="card h-100 card-feature">
+            <div class="card-header bg-info text-white text-center py-3">
+              <i class="bi bi-palette" style="font-size: 2.5rem;"></i>
+              <h3 class="h5 mt-2 mb-0">Gráfica</h3>
+            </div>
+            <div class="card-body p-4">
+              <p class="small text-muted mb-3">Especialidad en diseño gráfico, comunicación visual y producción de medios impresos y digitales.</p>
+              
+              <h4 class="h6 text-primary-liceo mb-3">Áreas de Formación:</h4>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Diseño Gráfico Digital</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Producción Editorial</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Fotografía y Retoque</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Publicidad y Marketing</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Medios Audiovisuales</li>
+              </ul>
+
+              <div class="mb-3">
+                <h4 class="h6 text-primary-liceo mb-2">Campo Laboral:</h4>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-light text-dark">Agencias</span>
+                  <span class="badge bg-light text-dark">Editoriales</span>
+                  <span class="badge bg-light text-dark">Medios</span>
+                  <span class="badge bg-light text-dark">Freelance</span>
+                </div>
+              </div>
+
+              <div class="bg-light rounded p-3">
+                <small><strong>Duración:</strong> 3º y 4º Medio</small><br>
+                <small><strong>Práctica Profesional:</strong> 540 horas</small><br>
+                <small><strong>Título:</strong> Técnico de Nivel Medio en Gráfica</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telecomunicaciones -->
+        <div class="col-lg-4 reveal">
+          <div class="card h-100 card-feature">
+            <div class="card-header bg-success text-white text-center py-3">
+              <i class="bi bi-broadcast" style="font-size: 2.5rem;"></i>
+              <h3 class="h5 mt-2 mb-0">Telecomunicaciones</h3>
+            </div>
+            <div class="card-body p-4">
+              <p class="small text-muted mb-3">Formación en tecnologías de comunicación, redes y sistemas de información.</p>
+              
+              <h4 class="h6 text-primary-liceo mb-3">Áreas de Formación:</h4>
+              <ul class="list-unstyled small mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Redes de Comunicación</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Sistemas Telefónicos</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Fibra Óptica</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Comunicaciones Móviles</li>
+                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Mantenimiento de Equipos</li>
+              </ul>
+
+              <div class="mb-3">
+                <h4 class="h6 text-primary-liceo mb-2">Campo Laboral:</h4>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-light text-dark">Telefonía</span>
+                  <span class="badge bg-light text-dark">Internet</span>
+                  <span class="badge bg-light text-dark">TV Cable</span>
+                  <span class="badge bg-light text-dark">Soporte TI</span>
+                </div>
+              </div>
+
+              <div class="bg-light rounded p-3">
+                <small><strong>Duración:</strong> 3º y 4º Medio</small><br>
+                <small><strong>Práctica Profesional:</strong> 540 horas</small><br>
+                <small><strong>Título:</strong> Técnico de Nivel Medio en Telecomunicaciones</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios y Certificaciones -->
+    <section class="mb-5">
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="card card-feature h-100">
+            <div class="card-body p-4">
+              <h2 class="h5 text-primary-liceo mb-3">
+                <i class="bi bi-award me-2"></i>Certificaciones y Titulación
+              </h2>
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-diploma"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Licencia de Enseñanza Media</h3>
+                      <p class="small text-muted mb-0">Todas las especialidades incluyen la licenciatura de educación media</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="mb-3">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-patch-check"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Título Técnico de Nivel Medio</h3>
+                      <p class="small text-muted mb-0">Reconocido por el Ministerio de Educación</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="mb-0">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-briefcase"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Práctica Profesional</h3>
+                      <p class="small text-muted mb-0">540 horas en empresas del rubro</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="card card-feature h-100">
+            <div class="card-body p-4">
+              <h2 class="h5 text-primary-liceo mb-3">
+                <i class="bi bi-graph-up-arrow me-2"></i>Beneficios de Estudiar con Nosotros
+              </h2>
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-tools"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Talleres Equipados</h3>
+                      <p class="small text-muted mb-0">Laboratorios y talleres con tecnología actualizada</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="mb-3">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Docentes Especialistas</h3>
+                      <p class="small text-muted mb-0">Profesores con experiencia en la industria</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="mb-0">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; flex-shrink: 0;">
+                      <i class="bi bi-building-gear"></i>
+                    </div>
+                    <div>
+                      <h3 class="h6 mb-1">Convenios Empresariales</h3>
+                      <p class="small text-muted mb-0">Red de empresas para prácticas y empleabilidad</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center">
+      <div class="card card-feature">
+        <div class="card-body p-5">
+          <h2 class="h4 text-primary-liceo mb-3">¿Interesado en Postular?</h2>
+          <p class="mb-4">Conoce más sobre nuestro proceso de admisión y únete a nuestra comunidad educativa</p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="./admision.html" class="btn btn-primary-liceo btn-lg">
+              <i class="bi bi-person-plus me-2"></i>Proceso de Admisión
+            </a>
+            <a href="./contacto.html" class="btn btn-outline-primary-liceo btn-lg">
+              <i class="bi bi-envelope me-2"></i>Más Información
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer mt-5 py-5"><div class="container small text-secondary">© <span id="year"></span> Liceo.</div></footer>
-  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba"><i class="bi bi-chevron-up"></i></button>
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <button class="back-to-top" id="backTop" aria-label="Ir arriba" title="Ir arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const I18N = { es:{ title:'Oferta Educativa', bc:'Oferta Educativa', sub:'Programas formativos y trayectorias de aprendizaje.', back:'Ir arriba',
-    o1:'Enseñanza Media Científico-Humanista', o1d:'Plan común con electivos de profundización.', o2:'Tecnología y Programación', o2d:'Talleres y módulos de pensamiento computacional.', o3:'Formación Ciudadana', o3d:'Convivencia, liderazgo y participación.', o4:'Plan de Lectura', o4d:'Fomento lector y habilidades comunicativas.', o5:'Ciencias', o5d:'Laboratorios y proyectos experimentales.', o6:'Idiomas', o6d:'Inglés y talleres comunicativos.' },
-    en:{ title:'Academic Programs', bc:'Academic Programs', sub:'Learning pathways and curricula.', back:'Go to top',
-    o1:'General Secondary Education', o1d:'Core curriculum with elective deepening.', o2:'Technology & Programming', o2d:'Workshops and computational thinking.', o3:'Civic Education', o3d:'Coexistence, leadership and participation.', o4:'Reading Plan', o4d:'Reading promotion and communication skills.', o5:'Science', o5d:'Labs and experimental projects.', o6:'Languages', o6d:'English and communication workshops.' } };
-  const langSel=document.getElementById('langSelect'); const saved=localStorage.getItem('lang')||'es'; langSel.value=saved; apply(saved);
-  langSel.addEventListener('change',e=>{ localStorage.setItem('lang', e.target.value); apply(e.target.value); });
-  function apply(l){ const d=I18N[l]||I18N.es; title.textContent=d.title; subtitle.textContent=d.sub; document.getElementById('bcCurrent').textContent=d.bc; backTop.setAttribute('title', d.back); backTop.setAttribute('aria-label', d.back); opt1.textContent=d.o1; opt1d.textContent=d.o1d; opt2.textContent=d.o2; opt2d.textContent=d.o2d; opt3.textContent=d.o3; opt3d.textContent=d.o3d; opt4.textContent=d.o4; opt4d.textContent=d.o4d; opt5.textContent=d.o5; opt5d.textContent=d.o5d; opt6.textContent=d.o6; opt6d.textContent=d.o6d; }
-  document.getElementById('year').textContent=new Date().getFullYear();
-  const backTop=document.getElementById('backTop');
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.2});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  window.addEventListener('scroll',()=>{ backTop.classList.toggle('show', window.scrollY>240); document.querySelector('.navbar-liceo').classList.toggle('navbar-elevated', window.scrollY>12); });
-  backTop.addEventListener('click',()=> window.scrollTo({top:0,behavior:'smooth'}));
+    // Cargar componentes
+    async function loadComponent(elementId, filePath) {
+      try {
+        const response = await fetch(filePath);
+        const html = await response.text();
+        document.getElementById(elementId).innerHTML = html;
+      } catch (error) {
+        console.error(`Error cargando ${filePath}:`, error);
+      }
+    }
+
+    // Cargar todos los componentes
+    Promise.all([
+      loadComponent('topbar', './components/topbar.html'),
+      loadComponent('navbar', './components/navbar.html'),
+      loadComponent('footer', './components/footer.html')
+    ]).then(() => {
+      initializePage();
+    });
+
+    function initializePage() {
+      // Año en footer
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      // Back to top
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar-liceo');
+        if (navbar) {
+          navbar.classList.toggle('navbar-elevated', window.scrollY > 12);
+        }
+        backTop.classList.toggle('show', window.scrollY > 240);
+      });
+      
+      backTop.addEventListener('click', () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      });
+
+      // Reveal animation
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        });
+      }, {threshold: 0.2});
+      
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    }
   </script>
 </body>
 </html>
